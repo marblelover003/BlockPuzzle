@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="icon" href="20x20.png">
+		<link rel="stylesheet" href="BlockPuzzle.css">
+		<title>Block Puzzle [20x20]</title>
+		<style>
+			td {
+				width: 26px;
+				height: 26px;
+				font: 400 12px Montserrat;
+				outline: 1px solid black;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="banner"><span id="demo"></span></div>
+		Time elapsed: <b id="time">0&apos;00&quot;<small>000</small></b><br>
+		Moves: <b id="moves">0</b><br>
+		Speed: <b id="speed">0<span style="font-size: 18px;">.00</span></b> moves / sec<br>
+		<button onclick="newGame()">New Game</button><br>
+		<a href="BlockPuzzle3.html">3x3</a>
+		<a href="BlockPuzzle3x4.html">3x4</a>
+		<a href="BlockPuzzle4.html">4x4</a><br>
+		<a href="BlockPuzzle4x5.html">4x5</a>
+		<a href="BlockPuzzle5.html">5x5</a>
+		<a href="BlockPuzzle5x6.html">5x6</a><br>
+		<a href="BlockPuzzle6.html">6x6</a>
+		<a href="BlockPuzzle6x8.html">6x8</a>
+		<a href="BlockPuzzle8.html">8x8</a><br>
+		<a href="BlockPuzzle10.html">10x10</a>
+		<a href="BlockPuzzle12.html">12x12</a><br>
+		<a href="BlockPuzzle15.html">15x15</a>
+		<b>20x20</b>
+		<span style="position: absolute; top: 8px; right: 608px; width: 350px;">
+			Your Best<br>
+			Time: <b id="bestTime">999&apos;59&quot;<small>999</small></b><br>
+			Moves: <b id="bestMoves">99,999</b>
+		</span>
+		<table>
+			<tr>
+				<td id="c00" onclick="moveBlock(0, 0)">1</td>
+				<td id="c01" onclick="moveBlock(0, 1)">2</td>
+				<td id="c02" onclick="moveBlock(0, 2)">3</td>
+				<td id="c03" onclick="moveBlock(0, 3)">4</td>
+				<td id="c04" onclick="moveBlock(0, 4)">5</td>
+				<td id="c05" onclick="moveBlock(0, 5)">6</td>
+				<td id="c06" onclick="moveBlock(0, 6)">7</td>
+				<td id="c07" onclick="moveBlock(0, 7)">8</td>
+				<td id="c08" onclick="moveBlock(0, 8)">9</td>
+				<td id="c09" onclick="moveBlock(0, 9)">10</td>
+				<td id="c0a" onclick="moveBlock(0,10)">11</td>
+				<td id="c0b" onclick="moveBlock(0,11)">12</td>
+				<td id="c0c" onclick="moveBlock(0,12)">13</td>
+				<td id="c0d" onclick="moveBlock(0,13)">14</td>
+				<td id="c0e" onclick="moveBlock(0,14)">15</td>
+				<td id="c0f" onclick="moveBlock(0,15)">16</td>
+				<td id="c0g" onclick="moveBlock(0,16)">17</td>
+				<td id="c0h" onclick="moveBlock(0,17)">18</td>
+				<td id="c0i" onclick="moveBlock(0,18)">19</td>
+				<td id="c0j" onclick="moveBlock(0,19)">20</td></tr><tr>
+				<td id="c10" onclick="moveBlock(1, 0)">21</td>
+				<td id="c11" onclick="moveBlock(1, 1)">22</td>
+				<td id="c12" onclick="moveBlock(1, 2)">23</td>
+				<td id="c13" onclick="moveBlock(1, 3)">24</td>
+				<td id="c14" onclick="moveBlock(1, 4)">25</td>
+				<td id="c15" onclick="moveBlock(1, 5)">26</td>
+				<td id="c16" onclick="moveBlock(1, 6)">27</td>
+				<td id="c17" onclick="moveBlock(1, 7)">28</td>
+				<td id="c18" onclick="moveBlock(1, 8)">29</td>
+				<td id="c19" onclick="moveBlock(1, 9)">30</td>
+				<td id="c1a" onclick="moveBlock(1,10)">31</td>
+				<td id="c1b" onclick="moveBlock(1,11)">32</td>
+				<td id="c1c" onclick="moveBlock(1,12)">33</td>
+				<td id="c1d" onclick="moveBlock(1,13)">34</td>
+				<td id="c1e" onclick="moveBlock(1,14)">35</td>
+				<td id="c1f" onclick="moveBlock(1,15)">36</td>
+				<td id="c1g" onclick="moveBlock(1,16)">37</td>
+				<td id="c1h" onclick="moveBlock(1,17)">38</td>
+				<td id="c1i" onclick="moveBlock(1,18)">39</td>
+				<td id="c1j" onclick="moveBlock(1,19)">40</td></tr><tr>
+				<td id="c20" onclick="moveBlock(2, 0)">41</td>
+				<td id="c21" onclick="moveBlock(2, 1)">42</td>
+				<td id="c22" onclick="moveBlock(2, 2)">43</td>
+				<td id="c23" onclick="moveBlock(2, 3)">44</td>
+				<td id="c24" onclick="moveBlock(2, 4)">45</td>
+				<td id="c25" onclick="moveBlock(2, 5)">46</td>
+				<td id="c26" onclick="moveBlock(2, 6)">47</td>
+				<td id="c27" onclick="moveBlock(2, 7)">48</td>
+				<td id="c28" onclick="moveBlock(2, 8)">49</td>
+				<td id="c29" onclick="moveBlock(2, 9)">50</td>
+				<td id="c2a" onclick="moveBlock(2,10)">51</td>
+				<td id="c2b" onclick="moveBlock(2,11)">52</td>
+				<td id="c2c" onclick="moveBlock(2,12)">53</td>
+				<td id="c2d" onclick="moveBlock(2,13)">54</td>
+				<td id="c2e" onclick="moveBlock(2,14)">55</td>
+				<td id="c2f" onclick="moveBlock(2,15)">56</td>
+				<td id="c2g" onclick="moveBlock(2,16)">57</td>
+				<td id="c2h" onclick="moveBlock(2,17)">58</td>
+				<td id="c2i" onclick="moveBlock(2,18)">59</td>
+				<td id="c2j" onclick="moveBlock(2,19)">60</td></tr><tr>
+				<td id="c30" onclick="moveBlock(3, 0)">61</td>
+				<td id="c31" onclick="moveBlock(3, 1)">62</td>
+				<td id="c32" onclick="moveBlock(3, 2)">63</td>
+				<td id="c33" onclick="moveBlock(3, 3)">64</td>
+				<td id="c34" onclick="moveBlock(3, 4)">65</td>
+				<td id="c35" onclick="moveBlock(3, 5)">66</td>
+				<td id="c36" onclick="moveBlock(3, 6)">67</td>
+				<td id="c37" onclick="moveBlock(3, 7)">68</td>
+				<td id="c38" onclick="moveBlock(3, 8)">69</td>
+				<td id="c39" onclick="moveBlock(3, 9)">70</td>
+				<td id="c3a" onclick="moveBlock(3,10)">71</td>
+				<td id="c3b" onclick="moveBlock(3,11)">72</td>
+				<td id="c3c" onclick="moveBlock(3,12)">73</td>
+				<td id="c3d" onclick="moveBlock(3,13)">74</td>
+				<td id="c3e" onclick="moveBlock(3,14)">75</td>
+				<td id="c3f" onclick="moveBlock(3,15)">76</td>
+				<td id="c3g" onclick="moveBlock(3,16)">77</td>
+				<td id="c3h" onclick="moveBlock(3,17)">78</td>
+				<td id="c3i" onclick="moveBlock(3,18)">79</td>
+				<td id="c3j" onclick="moveBlock(3,19)">80</td></tr><tr>
+				<td id="c40" onclick="moveBlock(4, 0)">81</td>
+				<td id="c41" onclick="moveBlock(4, 1)">82</td>
+				<td id="c42" onclick="moveBlock(4, 2)">83</td>
+				<td id="c43" onclick="moveBlock(4, 3)">84</td>
+				<td id="c44" onclick="moveBlock(4, 4)">85</td>
+				<td id="c45" onclick="moveBlock(4, 5)">86</td>
+				<td id="c46" onclick="moveBlock(4, 6)">87</td>
+				<td id="c47" onclick="moveBlock(4, 7)">88</td>
+				<td id="c48" onclick="moveBlock(4, 8)">89</td>
+				<td id="c49" onclick="moveBlock(4, 9)">90</td>
+				<td id="c4a" onclick="moveBlock(4,10)">91</td>
+				<td id="c4b" onclick="moveBlock(4,11)">92</td>
+				<td id="c4c" onclick="moveBlock(4,12)">93</td>
+				<td id="c4d" onclick="moveBlock(4,13)">94</td>
+				<td id="c4e" onclick="moveBlock(4,14)">95</td>
+				<td id="c4f" onclick="moveBlock(4,15)">96</td>
+				<td id="c4g" onclick="moveBlock(4,16)">97</td>
+				<td id="c4h" onclick="moveBlock(4,17)">98</td>
+				<td id="c4i" onclick="moveBlock(4,18)">99</td>
+				<td id="c4j" onclick="moveBlock(4,19)">100</td></tr><tr>
+				<td id="c50" onclick="moveBlock(5, 0)">101</td>
+				<td id="c51" onclick="moveBlock(5, 1)">102</td>
+				<td id="c52" onclick="moveBlock(5, 2)">103</td>
+				<td id="c53" onclick="moveBlock(5, 3)">104</td>
+				<td id="c54" onclick="moveBlock(5, 4)">105</td>
+				<td id="c55" onclick="moveBlock(5, 5)">106</td>
+				<td id="c56" onclick="moveBlock(5, 6)">107</td>
+				<td id="c57" onclick="moveBlock(5, 7)">108</td>
+				<td id="c58" onclick="moveBlock(5, 8)">109</td>
+				<td id="c59" onclick="moveBlock(5, 9)">110</td>
+				<td id="c5a" onclick="moveBlock(5,10)">111</td>
+				<td id="c5b" onclick="moveBlock(5,11)">112</td>
+				<td id="c5c" onclick="moveBlock(5,12)">113</td>
+				<td id="c5d" onclick="moveBlock(5,13)">114</td>
+				<td id="c5e" onclick="moveBlock(5,14)">115</td>
+				<td id="c5f" onclick="moveBlock(5,15)">116</td>
+				<td id="c5g" onclick="moveBlock(5,16)">117</td>
+				<td id="c5h" onclick="moveBlock(5,17)">118</td>
+				<td id="c5i" onclick="moveBlock(5,18)">119</td>
+				<td id="c5j" onclick="moveBlock(5,19)">120</td></tr><tr>
+				<td id="c60" onclick="moveBlock(6, 0)">121</td>
+				<td id="c61" onclick="moveBlock(6, 1)">122</td>
+				<td id="c62" onclick="moveBlock(6, 2)">123</td>
+				<td id="c63" onclick="moveBlock(6, 3)">124</td>
+				<td id="c64" onclick="moveBlock(6, 4)">125</td>
+				<td id="c65" onclick="moveBlock(6, 5)">126</td>
+				<td id="c66" onclick="moveBlock(6, 6)">127</td>
+				<td id="c67" onclick="moveBlock(6, 7)">128</td>
+				<td id="c68" onclick="moveBlock(6, 8)">129</td>
+				<td id="c69" onclick="moveBlock(6, 9)">130</td>
+				<td id="c6a" onclick="moveBlock(6,10)">131</td>
+				<td id="c6b" onclick="moveBlock(6,11)">132</td>
+				<td id="c6c" onclick="moveBlock(6,12)">133</td>
+				<td id="c6d" onclick="moveBlock(6,13)">134</td>
+				<td id="c6e" onclick="moveBlock(6,14)">135</td>
+				<td id="c6f" onclick="moveBlock(6,15)">136</td>
+				<td id="c6g" onclick="moveBlock(6,16)">137</td>
+				<td id="c6h" onclick="moveBlock(6,17)">138</td>
+				<td id="c6i" onclick="moveBlock(6,18)">139</td>
+				<td id="c6j" onclick="moveBlock(6,19)">140</td></tr><tr>
+				<td id="c70" onclick="moveBlock(7, 0)">141</td>
+				<td id="c71" onclick="moveBlock(7, 1)">142</td>
+				<td id="c72" onclick="moveBlock(7, 2)">143</td>
+				<td id="c73" onclick="moveBlock(7, 3)">144</td>
+				<td id="c74" onclick="moveBlock(7, 4)">145</td>
+				<td id="c75" onclick="moveBlock(7, 5)">146</td>
+				<td id="c76" onclick="moveBlock(7, 6)">147</td>
+				<td id="c77" onclick="moveBlock(7, 7)">148</td>
+				<td id="c78" onclick="moveBlock(7, 8)">149</td>
+				<td id="c79" onclick="moveBlock(7, 9)">150</td>
+				<td id="c7a" onclick="moveBlock(7,10)">151</td>
+				<td id="c7b" onclick="moveBlock(7,11)">152</td>
+				<td id="c7c" onclick="moveBlock(7,12)">153</td>
+				<td id="c7d" onclick="moveBlock(7,13)">154</td>
+				<td id="c7e" onclick="moveBlock(7,14)">155</td>
+				<td id="c7f" onclick="moveBlock(7,15)">156</td>
+				<td id="c7g" onclick="moveBlock(7,16)">157</td>
+				<td id="c7h" onclick="moveBlock(7,17)">158</td>
+				<td id="c7i" onclick="moveBlock(7,18)">159</td>
+				<td id="c7j" onclick="moveBlock(7,19)">160</td></tr><tr>
+				<td id="c80" onclick="moveBlock(8, 0)">161</td>
+				<td id="c81" onclick="moveBlock(8, 1)">162</td>
+				<td id="c82" onclick="moveBlock(8, 2)">163</td>
+				<td id="c83" onclick="moveBlock(8, 3)">164</td>
+				<td id="c84" onclick="moveBlock(8, 4)">165</td>
+				<td id="c85" onclick="moveBlock(8, 5)">166</td>
+				<td id="c86" onclick="moveBlock(8, 6)">167</td>
+				<td id="c87" onclick="moveBlock(8, 7)">168</td>
+				<td id="c88" onclick="moveBlock(8, 8)">169</td>
+				<td id="c89" onclick="moveBlock(8, 9)">170</td>
+				<td id="c8a" onclick="moveBlock(8,10)">171</td>
+				<td id="c8b" onclick="moveBlock(8,11)">172</td>
+				<td id="c8c" onclick="moveBlock(8,12)">173</td>
+				<td id="c8d" onclick="moveBlock(8,13)">174</td>
+				<td id="c8e" onclick="moveBlock(8,14)">175</td>
+				<td id="c8f" onclick="moveBlock(8,15)">176</td>
+				<td id="c8g" onclick="moveBlock(8,16)">177</td>
+				<td id="c8h" onclick="moveBlock(8,17)">178</td>
+				<td id="c8i" onclick="moveBlock(8,18)">179</td>
+				<td id="c8j" onclick="moveBlock(8,19)">180</td></tr><tr>
+				<td id="c90" onclick="moveBlock(9, 0)">181</td>
+				<td id="c91" onclick="moveBlock(9, 1)">182</td>
+				<td id="c92" onclick="moveBlock(9, 2)">183</td>
+				<td id="c93" onclick="moveBlock(9, 3)">184</td>
+				<td id="c94" onclick="moveBlock(9, 4)">185</td>
+				<td id="c95" onclick="moveBlock(9, 5)">186</td>
+				<td id="c96" onclick="moveBlock(9, 6)">187</td>
+				<td id="c97" onclick="moveBlock(9, 7)">188</td>
+				<td id="c98" onclick="moveBlock(9, 8)">189</td>
+				<td id="c99" onclick="moveBlock(9, 9)">190</td>
+				<td id="c9a" onclick="moveBlock(9,10)">191</td>
+				<td id="c9b" onclick="moveBlock(9,11)">192</td>
+				<td id="c9c" onclick="moveBlock(9,12)">193</td>
+				<td id="c9d" onclick="moveBlock(9,13)">194</td>
+				<td id="c9e" onclick="moveBlock(9,14)">195</td>
+				<td id="c9f" onclick="moveBlock(9,15)">196</td>
+				<td id="c9g" onclick="moveBlock(9,16)">197</td>
+				<td id="c9h" onclick="moveBlock(9,17)">198</td>
+				<td id="c9i" onclick="moveBlock(9,18)">199</td>
+				<td id="c9j" onclick="moveBlock(9,19)">200</td></tr><tr>
+				<td id="ca0" onclick="moveBlock(10, 0)">201</td>
+				<td id="ca1" onclick="moveBlock(10, 1)">202</td>
+				<td id="ca2" onclick="moveBlock(10, 2)">203</td>
+				<td id="ca3" onclick="moveBlock(10, 3)">204</td>
+				<td id="ca4" onclick="moveBlock(10, 4)">205</td>
+				<td id="ca5" onclick="moveBlock(10, 5)">206</td>
+				<td id="ca6" onclick="moveBlock(10, 6)">207</td>
+				<td id="ca7" onclick="moveBlock(10, 7)">208</td>
+				<td id="ca8" onclick="moveBlock(10, 8)">209</td>
+				<td id="ca9" onclick="moveBlock(10, 9)">210</td>
+				<td id="caa" onclick="moveBlock(10,10)">211</td>
+				<td id="cab" onclick="moveBlock(10,11)">212</td>
+				<td id="cac" onclick="moveBlock(10,12)">213</td>
+				<td id="cad" onclick="moveBlock(10,13)">214</td>
+				<td id="cae" onclick="moveBlock(10,14)">215</td>
+				<td id="caf" onclick="moveBlock(10,15)">216</td>
+				<td id="cag" onclick="moveBlock(10,16)">217</td>
+				<td id="cah" onclick="moveBlock(10,17)">218</td>
+				<td id="cai" onclick="moveBlock(10,18)">219</td>
+				<td id="caj" onclick="moveBlock(10,19)">220</td></tr><tr>
+				<td id="cb0" onclick="moveBlock(11, 0)">221</td>
+				<td id="cb1" onclick="moveBlock(11, 1)">222</td>
+				<td id="cb2" onclick="moveBlock(11, 2)">223</td>
+				<td id="cb3" onclick="moveBlock(11, 3)">224</td>
+				<td id="cb4" onclick="moveBlock(11, 4)">225</td>
+				<td id="cb5" onclick="moveBlock(11, 5)">226</td>
+				<td id="cb6" onclick="moveBlock(11, 6)">227</td>
+				<td id="cb7" onclick="moveBlock(11, 7)">228</td>
+				<td id="cb8" onclick="moveBlock(11, 8)">229</td>
+				<td id="cb9" onclick="moveBlock(11, 9)">230</td>
+				<td id="cba" onclick="moveBlock(11,10)">231</td>
+				<td id="cbb" onclick="moveBlock(11,11)">232</td>
+				<td id="cbc" onclick="moveBlock(11,12)">233</td>
+				<td id="cbd" onclick="moveBlock(11,13)">234</td>
+				<td id="cbe" onclick="moveBlock(11,14)">235</td>
+				<td id="cbf" onclick="moveBlock(11,15)">236</td>
+				<td id="cbg" onclick="moveBlock(11,16)">237</td>
+				<td id="cbh" onclick="moveBlock(11,17)">238</td>
+				<td id="cbi" onclick="moveBlock(11,18)">239</td>
+				<td id="cbj" onclick="moveBlock(11,19)">240</td></tr><tr>
+				<td id="cc0" onclick="moveBlock(12, 0)">241</td>
+				<td id="cc1" onclick="moveBlock(12, 1)">242</td>
+				<td id="cc2" onclick="moveBlock(12, 2)">243</td>
+				<td id="cc3" onclick="moveBlock(12, 3)">244</td>
+				<td id="cc4" onclick="moveBlock(12, 4)">245</td>
+				<td id="cc5" onclick="moveBlock(12, 5)">246</td>
+				<td id="cc6" onclick="moveBlock(12, 6)">247</td>
+				<td id="cc7" onclick="moveBlock(12, 7)">248</td>
+				<td id="cc8" onclick="moveBlock(12, 8)">249</td>
+				<td id="cc9" onclick="moveBlock(12, 9)">250</td>
+				<td id="cca" onclick="moveBlock(12,10)">251</td>
+				<td id="ccb" onclick="moveBlock(12,11)">252</td>
+				<td id="ccc" onclick="moveBlock(12,12)">253</td>
+				<td id="ccd" onclick="moveBlock(12,13)">254</td>
+				<td id="cce" onclick="moveBlock(12,14)">255</td>
+				<td id="ccf" onclick="moveBlock(12,15)">256</td>
+				<td id="ccg" onclick="moveBlock(12,16)">257</td>
+				<td id="cch" onclick="moveBlock(12,17)">258</td>
+				<td id="cci" onclick="moveBlock(12,18)">259</td>
+				<td id="ccj" onclick="moveBlock(12,19)">260</td></tr><tr>
+				<td id="cd0" onclick="moveBlock(13, 0)">261</td>
+				<td id="cd1" onclick="moveBlock(13, 1)">262</td>
+				<td id="cd2" onclick="moveBlock(13, 2)">263</td>
+				<td id="cd3" onclick="moveBlock(13, 3)">264</td>
+				<td id="cd4" onclick="moveBlock(13, 4)">265</td>
+				<td id="cd5" onclick="moveBlock(13, 5)">266</td>
+				<td id="cd6" onclick="moveBlock(13, 6)">267</td>
+				<td id="cd7" onclick="moveBlock(13, 7)">268</td>
+				<td id="cd8" onclick="moveBlock(13, 8)">269</td>
+				<td id="cd9" onclick="moveBlock(13, 9)">270</td>
+				<td id="cda" onclick="moveBlock(13,10)">271</td>
+				<td id="cdb" onclick="moveBlock(13,11)">272</td>
+				<td id="cdc" onclick="moveBlock(13,12)">273</td>
+				<td id="cdd" onclick="moveBlock(13,13)">274</td>
+				<td id="cde" onclick="moveBlock(13,14)">275</td>
+				<td id="cdf" onclick="moveBlock(13,15)">276</td>
+				<td id="cdg" onclick="moveBlock(13,16)">277</td>
+				<td id="cdh" onclick="moveBlock(13,17)">278</td>
+				<td id="cdi" onclick="moveBlock(13,18)">279</td>
+				<td id="cdj" onclick="moveBlock(13,19)">280</td></tr><tr>
+				<td id="ce0" onclick="moveBlock(14, 0)">281</td>
+				<td id="ce1" onclick="moveBlock(14, 1)">282</td>
+				<td id="ce2" onclick="moveBlock(14, 2)">283</td>
+				<td id="ce3" onclick="moveBlock(14, 3)">284</td>
+				<td id="ce4" onclick="moveBlock(14, 4)">285</td>
+				<td id="ce5" onclick="moveBlock(14, 5)">286</td>
+				<td id="ce6" onclick="moveBlock(14, 6)">287</td>
+				<td id="ce7" onclick="moveBlock(14, 7)">288</td>
+				<td id="ce8" onclick="moveBlock(14, 8)">289</td>
+				<td id="ce9" onclick="moveBlock(14, 9)">290</td>
+				<td id="cea" onclick="moveBlock(14,10)">291</td>
+				<td id="ceb" onclick="moveBlock(14,11)">292</td>
+				<td id="cec" onclick="moveBlock(14,12)">293</td>
+				<td id="ced" onclick="moveBlock(14,13)">294</td>
+				<td id="cee" onclick="moveBlock(14,14)">295</td>
+				<td id="cef" onclick="moveBlock(14,15)">296</td>
+				<td id="ceg" onclick="moveBlock(14,16)">297</td>
+				<td id="ceh" onclick="moveBlock(14,17)">298</td>
+				<td id="cei" onclick="moveBlock(14,18)">299</td>
+				<td id="cej" onclick="moveBlock(14,19)">300</td></tr><tr>
+				<td id="cf0" onclick="moveBlock(15, 0)">301</td>
+				<td id="cf1" onclick="moveBlock(15, 1)">302</td>
+				<td id="cf2" onclick="moveBlock(15, 2)">303</td>
+				<td id="cf3" onclick="moveBlock(15, 3)">304</td>
+				<td id="cf4" onclick="moveBlock(15, 4)">305</td>
+				<td id="cf5" onclick="moveBlock(15, 5)">306</td>
+				<td id="cf6" onclick="moveBlock(15, 6)">307</td>
+				<td id="cf7" onclick="moveBlock(15, 7)">308</td>
+				<td id="cf8" onclick="moveBlock(15, 8)">309</td>
+				<td id="cf9" onclick="moveBlock(15, 9)">310</td>
+				<td id="cfa" onclick="moveBlock(15,10)">311</td>
+				<td id="cfb" onclick="moveBlock(15,11)">312</td>
+				<td id="cfc" onclick="moveBlock(15,12)">313</td>
+				<td id="cfd" onclick="moveBlock(15,13)">314</td>
+				<td id="cfe" onclick="moveBlock(15,14)">315</td>
+				<td id="cff" onclick="moveBlock(15,15)">316</td>
+				<td id="cfg" onclick="moveBlock(15,16)">317</td>
+				<td id="cfh" onclick="moveBlock(15,17)">318</td>
+				<td id="cfi" onclick="moveBlock(15,18)">319</td>
+				<td id="cfj" onclick="moveBlock(15,19)">320</td></tr><tr>
+				<td id="cg0" onclick="moveBlock(16, 0)">321</td>
+				<td id="cg1" onclick="moveBlock(16, 1)">322</td>
+				<td id="cg2" onclick="moveBlock(16, 2)">323</td>
+				<td id="cg3" onclick="moveBlock(16, 3)">324</td>
+				<td id="cg4" onclick="moveBlock(16, 4)">325</td>
+				<td id="cg5" onclick="moveBlock(16, 5)">326</td>
+				<td id="cg6" onclick="moveBlock(16, 6)">327</td>
+				<td id="cg7" onclick="moveBlock(16, 7)">328</td>
+				<td id="cg8" onclick="moveBlock(16, 8)">329</td>
+				<td id="cg9" onclick="moveBlock(16, 9)">330</td>
+				<td id="cga" onclick="moveBlock(16,10)">331</td>
+				<td id="cgb" onclick="moveBlock(16,11)">332</td>
+				<td id="cgc" onclick="moveBlock(16,12)">333</td>
+				<td id="cgd" onclick="moveBlock(16,13)">334</td>
+				<td id="cge" onclick="moveBlock(16,14)">335</td>
+				<td id="cgf" onclick="moveBlock(16,15)">336</td>
+				<td id="cgg" onclick="moveBlock(16,16)">337</td>
+				<td id="cgh" onclick="moveBlock(16,17)">338</td>
+				<td id="cgi" onclick="moveBlock(16,18)">339</td>
+				<td id="cgj" onclick="moveBlock(16,19)">340</td></tr><tr>
+				<td id="ch0" onclick="moveBlock(17, 0)">341</td>
+				<td id="ch1" onclick="moveBlock(17, 1)">342</td>
+				<td id="ch2" onclick="moveBlock(17, 2)">343</td>
+				<td id="ch3" onclick="moveBlock(17, 3)">344</td>
+				<td id="ch4" onclick="moveBlock(17, 4)">345</td>
+				<td id="ch5" onclick="moveBlock(17, 5)">346</td>
+				<td id="ch6" onclick="moveBlock(17, 6)">347</td>
+				<td id="ch7" onclick="moveBlock(17, 7)">348</td>
+				<td id="ch8" onclick="moveBlock(17, 8)">349</td>
+				<td id="ch9" onclick="moveBlock(17, 9)">350</td>
+				<td id="cha" onclick="moveBlock(17,10)">351</td>
+				<td id="chb" onclick="moveBlock(17,11)">352</td>
+				<td id="chc" onclick="moveBlock(17,12)">353</td>
+				<td id="chd" onclick="moveBlock(17,13)">354</td>
+				<td id="che" onclick="moveBlock(17,14)">355</td>
+				<td id="chf" onclick="moveBlock(17,15)">356</td>
+				<td id="chg" onclick="moveBlock(17,16)">357</td>
+				<td id="chh" onclick="moveBlock(17,17)">358</td>
+				<td id="chi" onclick="moveBlock(17,18)">359</td>
+				<td id="chj" onclick="moveBlock(17,19)">360</td></tr><tr>
+				<td id="ci0" onclick="moveBlock(18, 0)">361</td>
+				<td id="ci1" onclick="moveBlock(18, 1)">362</td>
+				<td id="ci2" onclick="moveBlock(18, 2)">363</td>
+				<td id="ci3" onclick="moveBlock(18, 3)">364</td>
+				<td id="ci4" onclick="moveBlock(18, 4)">365</td>
+				<td id="ci5" onclick="moveBlock(18, 5)">366</td>
+				<td id="ci6" onclick="moveBlock(18, 6)">367</td>
+				<td id="ci7" onclick="moveBlock(18, 7)">368</td>
+				<td id="ci8" onclick="moveBlock(18, 8)">369</td>
+				<td id="ci9" onclick="moveBlock(18, 9)">370</td>
+				<td id="cia" onclick="moveBlock(18,10)">371</td>
+				<td id="cib" onclick="moveBlock(18,11)">372</td>
+				<td id="cic" onclick="moveBlock(18,12)">373</td>
+				<td id="cid" onclick="moveBlock(18,13)">374</td>
+				<td id="cie" onclick="moveBlock(18,14)">375</td>
+				<td id="cif" onclick="moveBlock(18,15)">376</td>
+				<td id="cig" onclick="moveBlock(18,16)">377</td>
+				<td id="cih" onclick="moveBlock(18,17)">378</td>
+				<td id="cii" onclick="moveBlock(18,18)">379</td>
+				<td id="cij" onclick="moveBlock(18,19)">380</td></tr><tr>
+				<td id="cj0" onclick="moveBlock(19, 0)">381</td>
+				<td id="cj1" onclick="moveBlock(19, 1)">382</td>
+				<td id="cj2" onclick="moveBlock(19, 2)">383</td>
+				<td id="cj3" onclick="moveBlock(19, 3)">384</td>
+				<td id="cj4" onclick="moveBlock(19, 4)">385</td>
+				<td id="cj5" onclick="moveBlock(19, 5)">386</td>
+				<td id="cj6" onclick="moveBlock(19, 6)">387</td>
+				<td id="cj7" onclick="moveBlock(19, 7)">388</td>
+				<td id="cj8" onclick="moveBlock(19, 8)">389</td>
+				<td id="cj9" onclick="moveBlock(19, 9)">390</td>
+				<td id="cja" onclick="moveBlock(19,10)">391</td>
+				<td id="cjb" onclick="moveBlock(19,11)">392</td>
+				<td id="cjc" onclick="moveBlock(19,12)">393</td>
+				<td id="cjd" onclick="moveBlock(19,13)">394</td>
+				<td id="cje" onclick="moveBlock(19,14)">395</td>
+				<td id="cjf" onclick="moveBlock(19,15)">396</td>
+				<td id="cjg" onclick="moveBlock(19,16)">397</td>
+				<td id="cjh" onclick="moveBlock(19,17)">398</td>
+				<td id="cji" onclick="moveBlock(19,18)">399</td>
+				<td id="cjj" onclick="moveBlock(19,19)"></td></tr>
+		</table>
+	</body>
+	<script>
+		var running = false;
+		var board = [
+			[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+			[21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40],
+			[41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60],
+			[61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80],
+			[81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],
+			[101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120],
+			[121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140],
+			[141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160],
+			[161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180],
+			[181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200],
+			[201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220],
+			[221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240],
+			[241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260],
+			[261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280],
+			[281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300],
+			[301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320],
+			[321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340],
+			[341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360],
+			[361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380],
+			[381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, ""]
+		];
+		var size = [20, 20];
+		var solved = board.slice();
+		var start = 0, now = 0, elapsed = 0, m = 0, s = 0, ms = 0, moves = 0;
+		if (localStorage.getItem("bestTime" + size[0] + "x" + size[1]) == null) {
+			localStorage.setItem("bestTime" + size[0] + "x" + size[1], 59999999);
+		}
+		if (localStorage.getItem("bestMoves" + size[0] + "x" + size[1]) == null) {
+			localStorage.setItem("bestMoves" + size[0] + "x" + size[1], 50000);
+		}
+		displayBest();
+		function displayBest() {
+			var best = localStorage.getItem("bestTime" + size[0] + "x" + size[1]), best_M = Math.floor(best / 60000), best_S = Math.floor(best % 60000 / 1000), best_MS = Math.floor(best % 1000);
+			var bestMoves = localStorage.getItem("bestMoves" + size[0] + "x" + size[1]);
+			document.getElementById("bestTime").innerHTML = (best_M > 0 ? (best_M + "&apos;" + ("0" + best_S).slice(-2)) : ("" + best_S)) + "&quot;<small>" + ("00" + best_MS).slice(-3) + "</small>";
+			if (bestMoves >= 1000) {
+				document.getElementById("bestMoves").innerHTML = Math.floor(bestMoves / 1000) + "," + ("00" + (bestMoves % 1000)).slice(-3);
+			} else {
+				document.getElementById("bestMoves").innerHTML = bestMoves;
+			}
+		}
+		function newGame() {
+			running = true;
+			start = new Date().getTime();
+			moves = 0;
+			var nums = [
+				1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+				11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+				21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+				31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+				41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
+				51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
+				61, 62, 63, 64, 65, 66, 67, 68, 69, 70,
+				71, 72, 73, 74, 75, 76, 77, 78, 79, 80,
+				81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
+				91, 92, 93, 94, 95, 96, 97, 98, 99, 100,
+				101, 102, 103, 104, 105, 106, 107, 108, 109, 110,
+				111, 112, 113, 114, 115, 116, 117, 118, 119, 120,
+				121, 122, 123, 124, 125, 126, 127, 128, 129, 130,
+				131, 132, 133, 134, 135, 136, 137, 138, 139, 140,
+				141, 142, 143, 144, 145, 146, 147, 148, 149, 150,
+				151, 152, 153, 154, 155, 156, 157, 158, 159, 160,
+				161, 162, 163, 164, 165, 166, 167, 168, 169, 170,
+				171, 172, 173, 174, 175, 176, 177, 178, 179, 180,
+				181, 182, 183, 184, 185, 186, 187, 188, 189, 190,
+				191, 192, 193, 194, 195, 196, 197, 198, 199, 200,
+				201, 202, 203, 204, 205, 206, 207, 208, 209, 210,
+				211, 212, 213, 214, 215, 216, 217, 218, 219, 220,
+				221, 222, 223, 224, 225, 226, 227, 228, 229, 230,
+				231, 232, 233, 234, 235, 236, 237, 238, 239, 240,
+				241, 242, 243, 244, 245, 246, 247, 248, 249, 250,
+				251, 252, 253, 254, 255, 256, 257, 258, 259, 260,
+				261, 262, 263, 264, 265, 266, 267, 268, 269, 270,
+				271, 272, 273, 274, 275, 276, 277, 278, 279, 280,
+				281, 282, 283, 284, 285, 286, 287, 288, 289, 290,
+				291, 292, 293, 294, 295, 296, 297, 298, 299, 300,
+				301, 302, 303, 304, 305, 306, 307, 308, 309, 310,
+				311, 312, 313, 314, 315, 316, 317, 318, 319, 320,
+				321, 322, 323, 324, 325, 326, 327, 328, 329, 330,
+				331, 332, 333, 334, 335, 336, 337, 338, 339, 340,
+				341, 342, 343, 344, 345, 346, 347, 348, 349, 350,
+				351, 352, 353, 354, 355, 356, 357, 358, 359, 360,
+				361, 362, 363, 364, 365, 366, 367, 368, 369, 370,
+				371, 372, 373, 374, 375, 376, 377, 378, 379, 380,
+				381, 382, 383, 384, 385, 386, 387, 388, 389, 390,
+				391, 392, 393, 394, 395, 396, 397, 398, 399
+			];
+			board = [
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+			];
+			var x = 0;
+			while (x < nums.length) {
+				var r = Math.floor(Math.random() * 20);
+				var c = Math.floor(Math.random() * 20);
+				if (board[r][c] == 0) {
+					board[r][c] = nums[x];
+					x++;
+				}
+			}
+			reset();
+		}
+		setInterval(function() {
+			if (running) {
+				now = new Date().getTime();
+				elapsed = now - start;
+				m = Math.floor(elapsed / 60000);
+				s = Math.floor(elapsed % 60000 / 1000);
+				ms= Math.floor(elapsed % 1000);
+				document.getElementById("speed").innerHTML = Math.floor((moves / elapsed) * 1000) + "<span style=\"font-size: 18px;\">." + ("0" + Math.floor(((moves / elapsed) * 100000) % 100)).slice(-2) + "</span>";
+			}
+			document.getElementById("time").innerHTML = (m > 0 ? (m + "&apos;" + ("0" + s).slice(-2)) : ("" + s)) + "&quot;<small>" + ("00" + ms).slice(-3) + "</small>";
+			if (moves >= 1000) {
+				document.getElementById("moves").innerHTML = Math.floor(moves / 1000) + "," + ("00" + (moves % 1000)).slice(-3);
+			} else {
+				document.getElementById("moves").innerHTML = moves;
+			}
+			var check = 0;
+			for (var i = 0; i < 20; i++) {
+				for (var j = 0; j < 20; j++) {
+					document.getElementById("c" + i.toString(20) + j.toString(20)).innerHTML = board[i][j];
+					if (board[i][j] == solved[i][j]) {
+						check++;
+					}
+				}
+			}
+			if (check == 400) {
+				running = false;
+			}
+		}, 0);
+		function moveBlock(r, c) {
+			r = parseInt(r);
+			c = parseInt(c);
+			if (running) {
+				if (r > 0) {
+					if (board[r - 1][c] == "") {
+						board[r - 1][c] = board[r][c];
+						board[r][c] = "";
+						moves++;
+					}
+				}
+				if (c > 0) {
+					if (board[r][c - 1] == "") {
+						board[r][c - 1] = board[r][c];
+						board[r][c] = "";
+						moves++;
+					}
+				}
+				if (r < 19) {
+					if (board[r + 1][c] == "") {
+						board[r + 1][c] = board[r][c];
+						board[r][c] = "";
+						moves++;
+					}
+				}
+				if (c < 19) {
+					if (board[r][c + 1] == "") {
+						board[r][c + 1] = board[r][c];
+						board[r][c] = "";
+						moves++;
+					}
+				}
+				var check = 0;
+				for (var i = 0; i < 20; i++) {
+					for (var j = 0; j < 20; j++) {
+						document.getElementById("c" + i.toString(20) + j.toString(20)).classList.remove("solved");
+						document.getElementById("c" + i.toString(20) + j.toString(20)).innerHTML = board[i][j];
+						if (board[i][j] == solved[i][j]) {
+							check++;
+							document.getElementById("c" + i.toString(20) + j.toString(20)).classList.add("solved");
+						}
+					}
+				}
+				var check = 0;
+				for (var i = 0; i < size[0]; i++) {
+					for (var j = 0; j < size[1]; j++) {
+						document.getElementById("c" + i.toString(20) + j.toString(20)).classList.remove("solved");
+						document.getElementById("c" + i.toString(20) + j.toString(20)).innerHTML = board[i][j];
+						if (board[i][j] == solved[i][j]) {
+							check++;
+							document.getElementById("c" + i.toString(20) + j.toString(20)).classList.add("solved");
+						}
+					}
+				}
+				var check2 = 0;
+				var check3 = 0;
+				for (var i = 0; i < size[0]; i++) {
+					for (var j = 0; j < size[1]; j++) {
+						if (board[i][j] == solved[i][j]) {
+							check2++;
+						}
+						check3++;
+						if (check2 != check3) {
+							break;
+						}
+					}
+					if (check2 != check3) {
+						break;
+					}
+				}
+				for (var i = 0; i < size[0]; i++) {
+					for (var j = 0; j < size[1]; j++) {
+						document.getElementById("c" + i.toString(20) + j.toString(20)).classList.remove("next");
+						if (board[i][j] == check2 + 1) {
+							document.getElementById("c" + i.toString(20) + j.toString(20)).classList.add("next");
+						}
+					}
+				}
+				if (check == 400) {
+					running = false;
+					if (elapsed < localStorage.getItem("bestTime" + size[0] + "x" + size[1]) || moves < localStorage.getItem("bestMoves" + size[0] + "x" + size[1])) {
+						setTimeout(function() {
+							document.getElementById("demo").innerHTML = "A NEW RECORD!"
+							document.getElementById("demo").classList.add("finish");
+							document.getElementById("banner").style.display = "block";
+							setTimeout(function() {
+								document.getElementById("demo").classList.remove("finish");
+								document.getElementById("banner").style.display = "none";
+							}, 1500);
+						}, 2000);
+					}
+					if (elapsed < localStorage.getItem("bestTime" + size[0] + "x" + size[1])) {
+						localStorage.setItem("bestTime" + size[0] + "x" + size[1], elapsed);
+						displayBest();
+					}
+					if (moves < localStorage.getItem("bestMoves" + size[0] + "x" + size[1])) {
+						localStorage.setItem("bestMoves" + size[0] + "x" + size[1], moves);
+						displayBest();
+					}
+					for (var i = 0; i < 20; i++) {
+						for (var j = 0; j < 20; j++) {
+							document.getElementById("c" + i.toString(20) + j.toString(20)).innerHTML = board[i][j];
+						}
+					}
+					var completion = ["Good job", "Awesome", "Amazing", "Stellar", "Great job", "Fantastic", "Marvelous", "Way to go", "Nice job", "Congratulations", "Excellent", "Spectacular", "Terrific", "Great", "Impressive", "Well done"];
+					document.getElementById("demo").innerHTML = completion[Math.floor(Math.random() * completion.length)].toUpperCase() + "!";
+					document.getElementById("demo").classList.add("finish");
+					document.getElementById("banner").style.display = "inline-block";
+					setTimeout(function() {
+						document.getElementById("demo").classList.remove("finish");
+						document.getElementById("banner").style.display = "none";
+					}, 1500);
+				}
+			}
+		}
+		function reset() {
+			var check = 0;
+			for (var i = 0; i < size[0]; i++) {
+				for (var j = 0; j < size[1]; j++) {
+					document.getElementById("c" + i.toString(20) + j.toString(20)).classList.remove("solved");
+					document.getElementById("c" + i.toString(20) + j.toString(20)).innerHTML = board[i][j];
+					if (board[i][j] == solved[i][j]) {
+						check++;
+						document.getElementById("c" + i.toString(20) + j.toString(20)).classList.add("solved");
+					}
+				}
+			}
+			var check2 = 0;
+			var check3 = 0;
+			for (var i = 0; i < size[0]; i++) {
+				for (var j = 0; j < size[1]; j++) {
+					if (board[i][j] == solved[i][j]) {
+						check2++;
+					}
+					check3++;
+					if (check2 != check3) {
+						break;
+					}
+				}
+				if (check2 != check3) {
+					break;
+				}
+			}
+			for (var i = 0; i < size[0]; i++) {
+				for (var j = 0; j < size[1]; j++) {
+					document.getElementById("c" + i.toString(20) + j.toString(20)).classList.remove("next");
+					if (board[i][j] == check2 + 1) {
+						document.getElementById("c" + i.toString(20) + j.toString(20)).classList.add("next");
+					}
+				}
+			}
+		}
+	</script>
+</html>
