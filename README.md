@@ -1,37 +1,27 @@
-## Welcome to GitHub Pages
+# BlockPuzzle
 
-You can use the [editor on GitHub](https://github.com/marblelover003/BlockPuzzle/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Welcome to Block Puzzle, a sliding number puzzle that will test your skill.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+There are 13 different board sizes:
 
-### Markdown
+- 3x3
+- 3x4
+- 4x4
+- 4x5
+- 5x5
+- 5x6
+- 6x6
+- 6x8
+- 8x8
+- 10x10
+- 12x12
+- 15x15
+- 20x20
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+On each one, you will have one "hole" that you can use for moving the numbers around.
 
-```markdown
-Syntax highlighted code block
+There are also color codes for which numbers are in the correct spot. A number is green when it is "solved".
 
-# Header 1
-## Header 2
-### Header 3
+Simply hit "New Game" on a board to get started! But be aware that the boards are randomly generated and thus some boards may be unsolvable - simply hit New Game again when you come across this problem where only two numbers are not in the correct position!
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/marblelover003/BlockPuzzle/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+But enough talk - click [here](https://marblelover003.github.io/BlockPuzzle) to get started!
