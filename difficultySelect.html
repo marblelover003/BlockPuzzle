@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				margin: 0;
+				overflow: hidden;
+			}
+			@keyframes anim1 {
+				0% {
+					font-size: 96px;
+					height: 500px;
+					line-height: 500px;
+				}
+				100% {
+					font-size: 40px;
+					height: 60px;
+					line-height: 60px;
+				}
+			}
+			@keyframes anim2 {
+				0% {
+					opacity: 0;
+					visibility: visible;
+				}
+				100% {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+			h1 {
+				text-align: center;
+				animation: anim1 1s linear 2s;
+				animation-fill-mode: forwards;
+				font-size: 96px;
+				display: block;
+				height: 500px;
+				line-height: 500px;
+				margin: 0;
+			}
+			#difficulty {
+				position: absolute;
+				top: 100px;
+				opacity: 0;
+				left: 0px;
+				visibility: hidden;
+				animation: anim2 1s linear 2s;
+				animation-fill-mode: forwards;
+				width: 100%;
+			}
+			#difficulty td {
+				text-align: center;
+				height: 80px;
+			}
+		</style>
+		<link rel="stylesheet" href="BlockPuzzle.css">
+		<link rel="icon" href="BlockPuzzle.png">
+		<title>Select Your Difficulty</title>
+	</head>
+	<body>
+		<h1>Select Your Difficulty</h1>
+		<table id="difficulty">
+			<tr>
+				<td><a href="BlockPuzzle3.html">3x3</a></td>
+				<td><a href="BlockPuzzle3x4.html">3x4</a></td>
+				<td><a href="BlockPuzzle4.html">4x4</a></td>
+			</tr>
+			<tr>
+				<td><a href="BlockPuzzle4x5.html">4x5</a></td>
+				<td><a href="BlockPuzzle5.html">5x5</a></td>
+				<td><a href="BlockPuzzle5x6.html">5x6</a></td>
+			</tr>
+			<tr>
+				<td><a href="BlockPuzzle6.html">6x6</a></td>
+				<td><a href="BlockPuzzle6x8.html">6x8</a></td>
+				<td><a href="BlockPuzzle8.html">8x8</a></td>
+			</tr>
+			<tr>
+				<td><a href="BlockPuzzle10.html">10x10</a></td>
+				<td><a href="BlockPuzzle12.html">12x12</a></td>
+				<td><a href="BlockPuzzle15.html">15x15</a></td>
+			</tr>
+			<tr>
+				<td colspan="3"><a href="BlockPuzzle20.html">20x20</a></td>
+			</tr>
+		</table>
+	</body>
+	<script>
+		
+	</script>
+</html>

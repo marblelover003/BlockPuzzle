@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				white-space: nowrap;
+				overflow: hidden;
+			}
+			h1 {
+				text-align: center;
+				font-size: 150px;
+			}
+			@keyframes anim1 {
+				0% {
+					visibility: visible;
+					opacity: 0;
+					transform: translate(0px, 100px) scale(2, 2);
+				}
+				100% {
+					visibility: visible;
+					opacity: 1;
+					transform: translate(0px, 0px) scale(1, 1);
+				}
+			}
+			#play {
+				visibility: hidden;
+				display: inline-block;
+				animation: anim1 1s linear 2s;
+				animation-fill-mode: forwards;
+				font-size: 50px;
+				background: #608f60;
+				padding: 30px;
+				border-radius: 30px;
+				transition: background 500ms, color 500ms, box-shadow 500ms;
+				box-shadow: 0 0 30px 5px #00bf0000;
+			}
+			#play:hover {
+				text-decoration: none;
+				background: #00bf00;
+				color: white;
+				box-shadow: 0px 0px 30px 5px #00bf00ff;
+			}
+		</style>
+		<link rel="stylesheet" href="BlockPuzzle.css">
+		<link rel="icon" href="BlockPuzzle.png">
+		<title>Block Puzzle</title>
+	</head>
+	<body>
+		<h1>Block Puzzle</h1>
+		<div style="text-align: center;"><a id="play" href="difficultySelect.html">PLAY!</a></div>
+	</body>
+</html>
