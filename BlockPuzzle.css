@@ -79,6 +79,9 @@
 body, button {
 	font: 30px Montserrat, Verdana;
 }
+body {
+  user-select: none;
+}
 table {
 	position: absolute;
 	top: 8px;
@@ -151,6 +154,7 @@ button {
 }
 button:hover {
   background: #00bf00;
+  cursor: pointer;
 }
 button:active { /* for Mac users */
   color: black;
