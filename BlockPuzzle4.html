@@ -216,6 +216,17 @@
 						}
 					}
 				}
+        if (check == 14 && board[3][3] == "") {
+          var gameover = confirm("Hmmm... this board does not seem solvable. Want to start a new game?");
+          if (gameover == true) {
+            newGame();
+          } else if (gameover == false) {
+            running = false;
+            elapsed = 0;
+            moves = 0;
+            board = solved;
+          }
+        }
 				if (check == 16) {
 					running = false;
 					if (elapsed < localStorage.getItem("bestTime" + size[0] + "x" + size[1]) || moves < localStorage.getItem("bestMoves" + size[0] + "x" + size[1])) {
