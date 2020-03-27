@@ -380,5 +380,29 @@
 				}
 			}
 		}
+		document.addEventListener("keydown", function(event) {
+			if (event.key === "n") {
+				newGame();
+			} else if (event.key === "ArrowUp" || event.key === "ArrowRight" || event.key === "ArrowDown" || event.key === "ArrowLeft" || event.key === "w" || event.key === "a" || event.key === "s" || event.key === "d") {
+				var holePos = [-1, -1];
+				for (var i = 0; i < size[0]; i++) {
+					for (var j = 0; j < size[1]; j++) {
+						if (board[i][j] == "") {
+							holePos = [i, j];
+							break;
+						}
+					}
+				}
+				if ((event.key === "ArrowUp" || event.key === "w") && holePos[0] > 0) {
+					moveBlock(holePos[0] - 1, holePos[1]);
+				} else if ((event.key === "ArrowRight" || event.key === "d") && holePos[1] < size[1] - 1) {
+					moveBlock(holePos[0], holePos[1] + 1);
+				} else if ((event.key === "ArrowDown" || event.key === "s") && holePos[0] < size[0] - 1) {
+					moveBlock(holePos[0] + 1, holePos[1]);
+				} else if ((event.key === "ArrowLeft" || event.key === "a") && holePos[1] > 0) {
+					moveBlock(holePos[0], holePos[1] - 1);
+				}
+			}
+		});
 	</script>
 </html>
