@@ -338,12 +338,12 @@
 							}, 1500);
 						}, 2000);
 					}
-					if (elapsed < localStorage.getItem("bestTime10x10") || moves < localStorage.getItem("bestMoves10x10")) {
-						localStorage.setItem("bestTime10x10", elapsed);
+					if (elapsed < localStorage.getItem("bestTime8x10") || moves < localStorage.getItem("bestMoves8x10")) {
+						localStorage.setItem("bestTime8x10", elapsed);
 						displayBest();
 					}
 					if (moves < localStorage.getItem("bestMoves" + size[0] + "x" + size[1])) {
-						localStorage.setItem("bestMoves10x10", moves);
+						localStorage.setItem("bestMoves8x10", moves);
 						displayBest();
 					}
 					for (var i = 0; i < 8; i++) {
