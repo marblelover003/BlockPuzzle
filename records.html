@@ -151,7 +151,7 @@
 				var s = Math.floor(time % 60000 / 1000);
 				var ms = Math.floor(time % 1000);
 				document.getElementById("time" + sizes[i]).innerHTML = m + ":" + ("0" + s).slice(-2) + "." + ("00" + ms).slice(-3);
-				document.getElementById("moves" + sizes[i]).innerHTML = (moves >= 1000 ? (Math.floor(moves / 1000) + "," + ("00" + (moves % 1000)).slice(-3))) : moves);
+				document.getElementById("moves" + sizes[i]).innerHTML = (moves >= 1000 ? (Math.floor(moves / 1000) + "," + ("00" + (moves % 1000)).slice(-3)) : moves);
 			}
 		}
 		function resetRecords() {
