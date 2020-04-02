@@ -1,4 +1,4 @@
-# BlockPuzzle v1.6.1
+# BlockPuzzle v1.6.2
 
 Welcome to Block Puzzle, a sliding number puzzle that will test your skill.
 
