@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				text-align: center;
+				font-size: 24px;
+			}
+			h1 {
+				text-align: center;
+				font-size: 80px;
+				position: sticky;
+				top: 0;
+				background: white;
+			}
+			h2 {
+				text-align: center;
+				font-size: 50px;
+			}
+			#resetBtn {
+				-webkit-appearance: none;
+				border: 1px solid red;
+				color: red;
+				background: white;
+				border-radius: 8px;
+				font: 30px Montserrat;
+				transition-duration: 500ms;
+				position: fixed;
+				top: 8px;
+				right: 8px;
+			}
+			#resetBtn:hover {
+				color: white;
+				background: red;
+			}
+		</style>
+		<link rel="stylesheet" href="BlockPuzzle.css">
+		<link rel="icon" href="BlockPuzzle.png">
+		<title>Your Records</title>
+	</head>
+	<body>
+		<h1>Your Records</h1>
+		<button onclick="resetRecords()" id="resetBtn">Reset Records<br><span style="color: white;">Don't do it!</span></button>
+		<span style="position: fixed; top: 8px; left: 8px;">
+			<a href="BlockPuzzle3.html">3x3</a>
+			<a href="BlockPuzzle3x4.html">3x4</a>
+			<a href="BlockPuzzle4.html">4x4</a><br>
+			<a href="BlockPuzzle4x5.html">4x5</a>
+			<a href="BlockPuzzle5.html">5x5</a>
+			<a href="BlockPuzzle5x6.html">5x6</a><br>
+			<a href="BlockPuzzle6.html">6x6</a>
+			<a href="BlockPuzzle6x8.html">6x8</a>
+			<a href="BlockPuzzle8.html">8x8</a><br>
+			<a href="BlockPuzzle8x10.html">8x10</a>
+			<a href="BlockPuzzle10.html">10x10</a><br>
+			<a href="BlockPuzzle10x12.html">10x12</a>
+			<a href="BlockPuzzle12.html">12x12</a><br>
+			<a href="BlockPuzzle15.html">15x15</a>
+			<a href="BlockPuzzle20.html">20x20</a>
+		</span>
+		<table>
+			<tr>
+				<th>Board Size</th>
+				<th>Fastest Time</th>
+				<th>Least Moves</th>
+			</tr>
+			<tr>
+				<td>3x3</td>
+				<td id="time3x3">999:59.999</td>
+				<td id="moves3x3">100,000</td>
+			</tr>
+			<tr>
+				<td>3x4</td>
+				<td id="time3x4">999:59.999</td>
+				<td id="moves3x4">100,000</td>
+			</tr>
+			<tr>
+				<td>4x4</td>
+				<td id="time4x4">999:59.999</td>
+				<td id="moves4x4">100,000</td>
+			</tr>
+			<tr>
+				<td>4x5</td>
+				<td id="time4x5">999:59.999</td>
+				<td id="moves4x5">100,000</td>
+			</tr>
+			<tr>
+				<td>5x5</td>
+				<td id="time5x5">999:59.999</td>
+				<td id="moves5x5">100,000</td>
+			</tr>
+			<tr>
+				<td>5x6</td>
+				<td id="time5x6">999:59.999</td>
+				<td id="moves5x6">100,000</td>
+			</tr>
+			<tr>
+				<td>6x6</td>
+				<td id="time6x6">999:59.999</td>
+				<td id="moves6x6">100,000</td>
+			</tr>
+			<tr>
+				<td>6x8</td>
+				<td id="time6x8">999:59.999</td>
+				<td id="moves6x8">100,000</td>
+			</tr>
+			<tr>
+				<td>8x8</td>
+				<td id="time8x8">999:59.999</td>
+				<td id="moves8x8">100,000</td>
+			</tr>
+			<tr>
+				<td>8x10</td>
+				<td id="time8x10">999:59.999</td>
+				<td id="moves8x10">100,000</td>
+			</tr>
+			<tr>
+				<td>10x10</td>
+				<td id="time10x10">999:59.999</td>
+				<td id="moves10x10">100,000</td>
+			</tr>
+			<tr>
+				<td>10x12</td>
+				<td id="time10x12">999:59.999</td>
+				<td id="moves10x12">100,000</td>
+			</tr>
+			<tr>
+				<td>12x12</td>
+				<td id="time12x12">999:59.999</td>
+				<td id="moves12x12">100,000</td>
+			</tr>
+			<tr>
+				<td>15x15</td>
+				<td id="time15x15">999:59.999</td>
+				<td id="moves15x15">100,000</td>
+			</tr>
+			<tr>
+				<td>20x20</td>
+				<td id="time20x20">999:59.999</td>
+				<td id="moves20x20">100,000</td>
+			</tr>
+		</table>
+	</body>
+	<script>
+		function displayRecords() {
+			var sizes = ['3x3', '3x4', '4x4', '4x5', '5x5', '5x6', '6x6', '6x8', '8x8', '8x10', '10x10', '10x12', '12x12', '15x15', '20x20'];
+			for (var i = 0; i < sizes.length; i++) {
+				var time = (localStorage.getItem("bestTime" + sizes[i]) == null ? 59999999 : localStorage.getItem("bestTime" + sizes[i]));
+				var moves = (localStorage.getItem("bestMoves" + sizes[i]) == null ? 100000 : localStorage.getItem("bestMoves" + sizes[i]));
+				var m = Math.floor(time / 60000);
+				var s = Math.floor(time % 60000 / 1000);
+				var ms = Math.floor(time % 1000);
+				document.getElementById("time" + sizes[i]).innerHTML = m + ":" + ("0" + s).slice(-2) + "." + ("00" + ms).slice(-3);
+				document.getElementById("moves" + sizes[i]).innerHTML = (moves >= 1000 ? (Math.floor(moves / 1000) + "," + ("00" + (moves % 1000).slice(-3)) : moves);
+			}
+		}
+		function resetRecords() {
+			var conf = confirm("Woah! Are you sure you want to reset your records?");
+			if (conf) {
+				conf = confirm("Are you POSITIVE you want to reset your records?! This action cannot be undone!");
+				if (conf) {
+					var sizes = ['3x3', '3x4', '4x4', '4x5', '5x5', '5x6', '6x6', '6x8', '8x8', '8x10', '10x10', '10x12', '12x12', '15x15', '20x20'];
+					for (var i = 0; i < sizes.length; i++) {
+						localStorage.setItem("bestTime" + sizes[i], 59999999);
+						localStorage.setItem("bestMoves" + sizes[i], 100000);
+					}
+					displayRecords();
+				}
+			}
+		}
+		displayRecords();
+	</script>
+</html>
