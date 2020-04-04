@@ -18,7 +18,8 @@
 				background: black;
 				color: white;
 			}
-			#dark {
+			input[type=checkbox] {
+				-webkit-appearance: none;
 				border: 1px solid black;
 				width: 30px;
 				height: 30px;
@@ -27,7 +28,7 @@
 				background-size: 30px 30px;
 				background-position: center;
 			}
-			#dark:checked {
+			input[type=checkbox]:checked {
 				background-image: url("https://marblelover003.github.io/BlockPuzzle/1.png");
 			}
 		</style>
@@ -37,7 +38,7 @@
 	</head>
 	<body>
 		<h1>Settings</h1>
-		Changes to these settings are applied and saved immediately.
+		Changes to these settings are applied and saved immediately.<br>
 		<input type="checkbox" id="dark" onchange="switchDark()"> Dark Mode *NEW!*
 		<span style="position: fixed; bottom: 8px; right: 8px;">
 			Go to a puzzle:<br>
@@ -64,6 +65,7 @@
 			localStorage.setItem("darkMode", false);
 		} else {
 			document.body.classList.toggle("dark", darkModeOn);
+			document.getElementById("dark").checked = darkModeOn;
 		}
 		function switchDark() {
 			var darkOn = document.getElementById("dark").checked;
