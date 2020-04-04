@@ -139,14 +139,15 @@ body.dark {
 	color: white;
 }
 td.dark:hover {
-	color: #333;
+	color: #333 !important;
+	border: 1px solid white !important;
 }
 a.dark {
-	color: white;
+	color: white !important;
 }
 .solved.dark {
-	background: #008000;
+	background: #008000 !important;
 }
 .next.dark {
-	background: blue;
+	background: blue !important;
 }
