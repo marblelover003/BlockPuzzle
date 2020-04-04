@@ -22,6 +22,8 @@
 	<body>
 		<h1>Changelog</h1>
 		<a style="position: absolute; top: 8px; left: 8px;" href="index.html">&laquo; Back to main menu</a>
+		<h2>v1.7.0</h2>
+		<p>New Feature: DARK MODE! Head to the new <a href="settings.html">Settings page</a> and try it out! Dark Mode makes everything darker, which should be way easier on the eyes.</p>
 		<h2>v1.6.2</h2>
 		<p>Bug fixes for the Records page.</p>
 		<h2>v1.6.1</h2>
@@ -55,4 +57,12 @@
 		<h2>v1.0.0</h2>
 		<p>Block Puzzle is now officially released! Move the blocks with your mouse using the hole provided and rearrange the numbers to solve the 4x4 puzzle!</p>
 	</body>
+	<script>
+		var darkModeOn = localStorage.getItem("darkMode");
+		if (darkModeOn == null) {
+			localStorage.setItem("darkMode", false);
+		} else {
+			document.body.classList.toggle("dark", darkModeOn);
+		}
+	</script>
 </html>
