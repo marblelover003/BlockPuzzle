@@ -134,20 +134,20 @@ button:hover {
 button:active { /* for Mac users */
   color: black;
 }
-body.dark {
+.dark body {
 	background: black;
 	color: white;
 }
-td.dark:hover {
+.dark td:hover {
 	color: #333 !important;
 	border: 1px solid white !important;
 }
-a.dark {
+.dark a {
 	color: white !important;
 }
-.solved.dark {
+.dark .solved {
 	background: #008000 !important;
 }
-.next.dark {
+.dark .next {
 	background: blue !important;
 }
