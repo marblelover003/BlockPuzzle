@@ -56,31 +56,12 @@
 		transform: translate(0px, 60px) scale(1.4, 1.4);
 	}	
 }
-@keyframes getready {
-	0% {
-		opacity: 0;
-		width: 100px;
-		transform: translate(0px, 100px) scale(1.4, 1.4);
-	}
-	5% {
-		opacity: 1;
-		transform: translate(0px, 100px) scale(1, 1);
-	}
-	83.333333% {
-		opacity: 1;
-		transform: translate(0px, 100px);
-	}
-	100% {
-		opacity: 0;
-		width: 100px;
-		transform: translate(0px, 100px) scale(3, 3);
-	}
-}
 body, button {
 	font: 30px Montserrat, Verdana;
 }
 body {
-  user-select: none;
+	user-select: none;
+	background: white;
 }
 table {
 	position: absolute;
@@ -111,16 +92,9 @@ small {
 	animation-fill-mode: forwards;
 	display: inline-block;
 }
-.getready {
-	border-top: 10px solid black;
-	border-bottom: 10px solid black;
-	background: #00df00;
-	font-size: 50px;
-	padding-left: 10px;
-	padding-right: 10px;
-	animation: getready 6s linear;
-	animation-fill-mode: forwards;
-	display: inline-block;
+.finish.dark {
+	border-top: 10px solid white;
+	border-bottom: 10px solid white;
 }
 #banner {
 	display: none;
@@ -151,6 +125,7 @@ button {
   border-radius: 10px;
   padding: 5px;
   transition-duration: 500ms;
+	background: white;
 }
 button:hover {
   background: #00bf00;
@@ -158,4 +133,20 @@ button:hover {
 }
 button:active { /* for Mac users */
   color: black;
+}
+body.dark {
+	background: black;
+	color: white;
+}
+td.dark:hover {
+	color: #333;
+}
+a.dark {
+	color: white;
+}
+.solved.dark {
+	background: #008000;
+}
+.next.dark {
+	background: blue;
 }
