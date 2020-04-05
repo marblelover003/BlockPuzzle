@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1 {
+				text-align: center;
+				font-size: 80px;
+			}
+			#quote {
+				text-align: center;
+			}
+			body {
+				font-size: 24px;
+			}
+			.complete {
+				color: #00bf00;
+			}
+			.incomplete {
+				color: #ff0000;
+			}
+			progress {
+				-webkit-appearance: none;
+				width: 100px;
+				height: 24px;
+			}
+			progress::-webkit-progress-bar {
+				border-radius: 12px;
+				background: white;
+				box-shadow: 0 0 3px 1px #0005 inset;
+			}
+			progress::-webkit-progress-value {
+				background: #00bf00;
+				border-radius: 12px;
+			}
+		</style>
+		<link rel="stylesheet" href="BlockPuzzle.css">
+		<link rel="icon" href="BlockPuzzle.png">
+		<title>Block Puzzle</title>
+	</head>
+	<body>
+		<h1>Achievements</h1>
+		<p id="quote"></p>
+		<p>Complete all achievements. <progress id="a0_progress" value="0" max="23"></progress> <span id="a0" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x3 board in 30 seconds or less. <span id="a1" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x3 board in 20 seconds or less. <span id="a2" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x3 board in 15 seconds or less. <span id="a3" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x3 board in 10 seconds or less. <span id="a4" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x3 board in 50 moves or less. <span id="a5" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x3 board in 40 moves or less. <span id="a6" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x3 board in 30 moves or less. <span id="a7" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x3 board in 20 moves or less. <span id="a8" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x4 board in 60 seconds or less. <span id="a9" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x4 board in 45 seconds or less. <span id="a10" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x4 board in 30 seconds or less. <span id="a11" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x4 board in 20 seconds or less. <span id="a12" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x4 board in 15 seconds or less. <span id="a13" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x4 board in 125 moves or less. <span id="a14" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x4 board in 100 moves or less. <span id="a15" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x4 board in 80 moves or less. <span id="a16" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x4 board in 70 moves or less. <span id="a17" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 3x4 board in 60 moves or less. <span id="a18" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 4x4 board in 90 seconds or less. <span id="a19" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 4x4 board in 75 seconds or less. <span id="a20" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 4x4 board in 60 seconds or less. <span id="a21" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 4x4 board in 45 seconds or less. <span id="a22" class="incomplete">INCOMPLETE</span></p>
+		<p>Solve the 4x4 board in 30 seconds or less. <span id="a23" class="incomplete">INCOMPLETE</span></p>
+	</body>
+	<script>
+		var quotes = [
+			"You will always miss 100% of the shots you don't take.",
+			"Keep calm and always reach for the stars.",
+			"Nothing was ever achieved without enthusiasm.",
+			"Believe you can and you're halfway there.",
+			"Anything is possible if you put your mind to it.",
+			"There is nothing impossible to him who will try.",
+			"The best preparation for tomorrow is doing your best today.",
+			"Reach for it. Push yourself as far as you can.",
+			"The best way out is always through.",
+			"Shoot for the moon. If you miss, you will still be among the stars."
+		];
+		document.getElementById("quote").innerHTML = quotes[Math.floor(Math.random() * quotes.length)];
+	</script>
+</html>
