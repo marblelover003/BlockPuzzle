@@ -12,15 +12,15 @@
 			body {
 				font-size: 24px;
 			}
-			.complete {
-				color: #00bf00;
-			}
 			.incomplete {
 				color: #ff0000;
 			}
+			.complete {
+				color: #00bf00;
+			}
 			progress {
 				-webkit-appearance: none;
-				width: 100px;
+				width: 500px;
 				height: 24px;
 			}
 			progress::-webkit-progress-bar {
@@ -34,13 +34,13 @@
 			}
 		</style>
 		<link rel="stylesheet" href="BlockPuzzle.css">
-		<link rel="icon" href="BlockPuzzle.png">
-		<title>Block Puzzle</title>
+		<link rel="icon" href="achievements.png">
+		<title>Achievements</title>
 	</head>
 	<body>
 		<h1>Achievements</h1>
 		<p id="quote"></p>
-		<p>Complete all achievements. <progress id="a0_progress" value="0" max="23"></progress> <span id="a0" class="incomplete">INCOMPLETE</span></p>
+		<p>Complete all achievements. <progress id="a0_progress" value="0" max="190"></progress> <span id="a0" class="incomplete">INCOMPLETE</span></p>
 		<p>Solve the 3x3 board in 30 seconds or less. <span id="a1" class="incomplete">INCOMPLETE</span></p>
 		<p>Solve the 3x3 board in 20 seconds or less. <span id="a2" class="incomplete">INCOMPLETE</span></p>
 		<p>Solve the 3x3 board in 15 seconds or less. <span id="a3" class="incomplete">INCOMPLETE</span></p>
@@ -79,5 +79,80 @@
 			"Shoot for the moon. If you miss, you will still be among the stars."
 		];
 		document.getElementById("quote").innerHTML = quotes[Math.floor(Math.random() * quotes.length)];
+		var bestTimes = [
+			localStorage.getItem("bestTime3x3"),
+			localStorage.getItem("bestTime3x4"),
+			localStorage.getItem("bestTime4x4"),
+			localStorage.getItem("bestTime4x5"),
+			localStorage.getItem("bestTime5x5"),
+			localStorage.getItem("bestTime5x6"),
+			localStorage.getItem("bestTime6x6"),
+			localStorage.getItem("bestTime6x8"),
+			localStorage.getItem("bestTime8x8"),
+			localStorage.getItem("bestTime8x10"),
+			localStorage.getItem("bestTime10x10"),
+			localStorage.getItem("bestTime10x12"),
+			localStorage.getItem("bestTime12x12"),
+			localStorage.getItem("bestTime15x15"),
+			localStorage.getItem("bestTime20x20")
+		];
+		var fewestMoves = [
+			localStorage.getItem("bestMoves3x3"),
+			localStorage.getItem("bestMoves3x4"),
+			localStorage.getItem("bestMoves4x4"),
+			localStorage.getItem("bestMoves4x5"),
+			localStorage.getItem("bestMoves5x5"),
+			localStorage.getItem("bestMoves5x6"),
+			localStorage.getItem("bestMoves6x6"),
+			localStorage.getItem("bestMoves6x8"),
+			localStorage.getItem("bestMoves8x8"),
+			localStorage.getItem("bestMoves8x10"),
+			localStorage.getItem("bestMoves10x10"),
+			localStorage.getItem("bestMoves10x12"),
+			localStorage.getItem("bestMoves12x12"),
+			localStorage.getItem("bestMoves15x15"),
+			localStorage.getItem("bestMoves20x20")
+		];
+		var achievements = 0;
+		if (bestTimes[0] <= 30000) {
+			achievements += 1;
+			document.getElementById("a1").innerHTML = "COMPLETE";
+			document.getElementById("a1").classList = ["complete"];
+		}
+		if (bestTimes[0] <= 20000) {
+			achievements += 1;
+			document.getElementById("a2").innerHTML = "COMPLETE";
+			document.getElementById("a2").classList = ["complete"];
+		}
+		if (bestTimes[0] <= 15000) {
+			achievements += 1;
+			document.getElementById("a3").innerHTML = "COMPLETE";
+			document.getElementById("a3").classList = ["complete"];
+		}
+		if (bestTimes[0] <= 10000) {
+			achievements += 1;
+			document.getElementById("a4").innerHTML = "COMPLETE";
+			document.getElementById("a4").classList = ["complete"];
+		}
+		document.getElementById("a0_progress").value = achievements;
+		/* Achievements:
+		 * Solve each board [15]
+		 * Solve 3x3 in (30, 20, 15, 10) sec and in (50, 40, 30, 20) moves [8]
+		 * Solve 3x4 in (60, 45, 30, 20, 15) sec and in (125, 100, 80, 70, 60) moves [10]
+		 * Solve 4x4 in (90, 75, 60, 45, 30) sec and in (200, 180, 160, 140, 120) moves [10]
+		 * Solve 4x5 in (180, 150, 120, 100, 80, 60) sec and in (400, 350, 300, 250, 225, 200) moves [12]
+		 * Solve 5x5 in (300, 240, 180, 150, 120, 90, 75) sec and in (700, 600, 500, 400, 350, 300) moves [13]
+		 * Solve 5x6 in (480, 360, 300, 240, 180, 150, 120, 90) sec and in (1000, 800, 600, 500, 450, 400) moves [14]
+		 * Solve 6x6 in (600, 480, 360, 300, 240, 180, 150, 120) sec and in (1250, 1000, 800, 600, 500) moves [13]
+		 * Solve 6x8 in (800, 600, 500, 420, 360, 300, 240, 180) sec and in (1500, 1300, 1100, 1000, 900) moves [13]
+		 * Solve 8x8 in (1000, 900, 800, 700, 600, 500, 420, 360, 300) sec and in (2500, 2000, 1800, 1600, 1500) moves [14]
+		 * Solve 8x10 in (1200, 1080, 960, 840, 720, 600, 480) sec and in (3000, 2500, 2250, 2000, 1800) moves [12]
+		 * Solve 10x10 in (1500, 1320, 1200, 1080, 960, 840, 720, 600) sec and in (4000, 3500, 3000, 2500) moves [12]
+		 * Solve 10x12 in (1650, 1350, 1080, 960, 840) sec and in (5000, 4500, 4000, 3500, 3000) moves [10]
+		 * Solve 12x12 in (2000, 1800, 1600, 1400, 1200, 1000) sec and in (7500, 6000, 5000, 4500, 4000) moves [11]
+		 * Solve 15x15 in (2400, 2200, 2000, 1800, 1600, 1500) sec and in (9000, 8000, 7000, 6000, 5000) moves [11]
+		 * Solve 20x20 in (3600, 3200, 2800, 2600, 2400, 2250) sec and in (12500, 10000, 9000, 8000, 7500, 6000) moves [12]
+		 * TOTAL: 190
+		 */
 	</script>
 </html>
