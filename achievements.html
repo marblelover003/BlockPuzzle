@@ -15,6 +15,9 @@
 			.incomplete {
 				color: #ff0000;
 			}
+			.partial {
+				color: #dfdf00;
+			}
 			.complete {
 				color: #00bf00;
 			}
@@ -40,30 +43,38 @@
 	<body>
 		<h1>Achievements</h1>
 		<p id="quote"></p>
-		<p>Complete all achievements. <progress id="a0_progress" value="0" max="190"></progress> <span id="a0" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x3 board in 30 seconds or less. <span id="a1" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x3 board in 20 seconds or less. <span id="a2" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x3 board in 15 seconds or less. <span id="a3" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x3 board in 10 seconds or less. <span id="a4" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x3 board in 50 moves or less. <span id="a5" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x3 board in 40 moves or less. <span id="a6" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x3 board in 30 moves or less. <span id="a7" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x3 board in 20 moves or less. <span id="a8" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x4 board in 60 seconds or less. <span id="a9" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x4 board in 45 seconds or less. <span id="a10" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x4 board in 30 seconds or less. <span id="a11" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x4 board in 20 seconds or less. <span id="a12" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x4 board in 15 seconds or less. <span id="a13" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x4 board in 125 moves or less. <span id="a14" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x4 board in 100 moves or less. <span id="a15" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x4 board in 80 moves or less. <span id="a16" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x4 board in 70 moves or less. <span id="a17" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 3x4 board in 60 moves or less. <span id="a18" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 4x4 board in 90 seconds or less. <span id="a19" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 4x4 board in 75 seconds or less. <span id="a20" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 4x4 board in 60 seconds or less. <span id="a21" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 4x4 board in 45 seconds or less. <span id="a22" class="incomplete">INCOMPLETE</span></p>
-		<p>Solve the 4x4 board in 30 seconds or less. <span id="a23" class="incomplete">INCOMPLETE</span></p>
+		<ul>
+			<li>Solve the 3x3 board in <span id="a1_tier">30 seconds</span> or less. <span id="a1" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 3x3 board in <span id="a2_tier">50</span> moves or less. <span id="a2" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 3x4 board in <span id="a3_tier">1 minute</span> or less. <span id="a3" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 3x4 board in <span id="a4_tier">125</span> moves or less. <span id="a4" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 4x4 board in <span id="a5_tier">1 min 30 sec</span> or less. <span id="a5" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 4x4 board in <span id="a6_tier">200</span> moves or less. <span id="a6" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 4x5 board in <span id="a7_tier">3 minutes</span> or less. <span id="a7" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 4x5 board in <span id="a8_tier">400</span> moves or less. <span id="a8" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 5x5 board in <span id="a9_tier">5 minutes</span> or less. <span id="a9" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 5x5 board in <span id="a10_tier">700</span> moves or less. <span id="a10" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 5x6 board in <span id="a11_tier">8 minutes</span> or less. <span id="a11" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 5x6 board in <span id="a12_tier">1,000</span> moves or less. <span id="a12" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 6x6 board in <span id="a13_tier">10 minutes</span> or less. <span id="a13" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 6x6 board in <span id="a14_tier">1,250</span> moves or less. <span id="a14" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 6x8 board in <span id="a15_tier">13 min 20 sec</span> or less. <span id="a15" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 6x8 board in <span id="a16_tier">1,500</span> moves or less. <span id="a16" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 8x8 board in <span id="a17_tier">16 min 40 sec</span> or less. <span id="a17" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 8x8 board in <span id="a18_tier">2,500</span> moves or less. <span id="a18" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 8x10 board in <span id="a19_tier">20 minutes</span> or less. <span id="a19" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 8x10 board in <span id="a20_tier">3,000</span> moves or less. <span id="a20" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 10x10 board in <span id="a21_tier">25 minutes</span> or less. <span id="a21" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 10x10 board in <span id="a22_tier">4,000</span> moves or less. <span id="a22" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 10x12 board in <span id="a23_tier">30 minutes</span> or less. <span id="a23" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 10x12 board in <span id="a24_tier">5,000</span> moves or less. <span id="a24" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 12x12 board in <span id="a25_tier">33 min 20 sec</span> or less. <span id="a25" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 12x12 board in <span id="a26_tier">7,500</span> moves or less. <span id="a26" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 15x15 board in <span id="a27_tier">40 minutes</span> or less. <span id="a27" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 15x15 board in <span id="a28_tier">9,000</span> moves or less. <span id="a28" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 20x20 board in <span id="a29_tier">1 hour</span> or less. <span id="a29" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 20x20 board in <span id="a30_tier">12,500</span> moves or less. <span id="a30" class="incomplete">INCOMPLETE</span></li>
+		</ul>
 	</body>
 	<script>
 		var quotes = [
@@ -114,45 +125,5 @@
 			localStorage.getItem("bestMoves20x20")
 		];
 		var achievements = 0;
-		if (bestTimes[0] <= 30000) {
-			achievements += 1;
-			document.getElementById("a1").innerHTML = "COMPLETE";
-			document.getElementById("a1").classList = ["complete"];
-		}
-		if (bestTimes[0] <= 20000) {
-			achievements += 1;
-			document.getElementById("a2").innerHTML = "COMPLETE";
-			document.getElementById("a2").classList = ["complete"];
-		}
-		if (bestTimes[0] <= 15000) {
-			achievements += 1;
-			document.getElementById("a3").innerHTML = "COMPLETE";
-			document.getElementById("a3").classList = ["complete"];
-		}
-		if (bestTimes[0] <= 10000) {
-			achievements += 1;
-			document.getElementById("a4").innerHTML = "COMPLETE";
-			document.getElementById("a4").classList = ["complete"];
-		}
-		document.getElementById("a0_progress").value = achievements;
-		/* Achievements:
-		 * Solve each board [15]
-		 * Solve 3x3 in (30, 20, 15, 10) sec and in (50, 40, 30, 20) moves [8]
-		 * Solve 3x4 in (60, 45, 30, 20, 15) sec and in (125, 100, 80, 70, 60) moves [10]
-		 * Solve 4x4 in (90, 75, 60, 45, 30) sec and in (200, 180, 160, 140, 120) moves [10]
-		 * Solve 4x5 in (180, 150, 120, 100, 80, 60) sec and in (400, 350, 300, 250, 225, 200) moves [12]
-		 * Solve 5x5 in (300, 240, 180, 150, 120, 90, 75) sec and in (700, 600, 500, 400, 350, 300) moves [13]
-		 * Solve 5x6 in (480, 360, 300, 240, 180, 150, 120, 90) sec and in (1000, 800, 600, 500, 450, 400) moves [14]
-		 * Solve 6x6 in (600, 480, 360, 300, 240, 180, 150, 120) sec and in (1250, 1000, 800, 600, 500) moves [13]
-		 * Solve 6x8 in (800, 600, 500, 420, 360, 300, 240, 180) sec and in (1500, 1300, 1100, 1000, 900) moves [13]
-		 * Solve 8x8 in (1000, 900, 800, 700, 600, 500, 420, 360, 300) sec and in (2500, 2000, 1800, 1600, 1500) moves [14]
-		 * Solve 8x10 in (1200, 1080, 960, 840, 720, 600, 480) sec and in (3000, 2500, 2250, 2000, 1800) moves [12]
-		 * Solve 10x10 in (1500, 1320, 1200, 1080, 960, 840, 720, 600) sec and in (4000, 3500, 3000, 2500) moves [12]
-		 * Solve 10x12 in (1650, 1350, 1080, 960, 840) sec and in (5000, 4500, 4000, 3500, 3000) moves [10]
-		 * Solve 12x12 in (2000, 1800, 1600, 1400, 1200, 1000) sec and in (7500, 6000, 5000, 4500, 4000) moves [11]
-		 * Solve 15x15 in (2400, 2200, 2000, 1800, 1600, 1500) sec and in (9000, 8000, 7000, 6000, 5000) moves [11]
-		 * Solve 20x20 in (3600, 3200, 2800, 2600, 2400, 2250) sec and in (12500, 10000, 9000, 8000, 7500, 6000) moves [12]
-		 * TOTAL: 190
-		 */
 	</script>
 </html>
