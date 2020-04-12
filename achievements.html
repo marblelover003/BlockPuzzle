@@ -44,7 +44,7 @@
 		<h1>Achievements</h1>
 		<p id="quote"></p>
 		<ul>
-			<li>Complete all achievements. <span id="a0">0%</span></li>
+			<li>Complete all achievements. <span id="a0" class="incomplete">0%</span></li>
 			<hr>
 			<li>Solve the 3x3 board in <span id="a1_tier">30 seconds</span> or less. <span id="a1" class="incomplete">INCOMPLETE</span></li>
 			<li>Solve the 3x3 board in <span id="a2_tier">75</span> moves or less. <span id="a2" class="incomplete">INCOMPLETE</span></li>
@@ -52,7 +52,7 @@
 			<li>Solve the 3x4 board in <span id="a3_tier">1 minute</span> or less. <span id="a3" class="incomplete">INCOMPLETE</span></li>
 			<li>Solve the 3x4 board in <span id="a4_tier">125</span> moves or less. <span id="a4" class="incomplete">INCOMPLETE</span></li>
 			<hr>
-			<li>Solve the 4x4 board in <span id="a5_tier">1 min 30 sec</span> or less. <span id="a5" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 4x4 board in <span id="a5_tier">1m 30s</span> or less. <span id="a5" class="incomplete">INCOMPLETE</span></li>
 			<li>Solve the 4x4 board in <span id="a6_tier">200</span> moves or less. <span id="a6" class="incomplete">INCOMPLETE</span></li>
 			<hr>
 			<li>Solve the 4x5 board in <span id="a7_tier">3 minutes</span> or less. <span id="a7" class="incomplete">INCOMPLETE</span></li>
@@ -67,10 +67,10 @@
 			<li>Solve the 6x6 board in <span id="a13_tier">10 minutes</span> or less. <span id="a13" class="incomplete">INCOMPLETE</span></li>
 			<li>Solve the 6x6 board in <span id="a14_tier">1,250</span> moves or less. <span id="a14" class="incomplete">INCOMPLETE</span></li>
 			<hr>
-			<li>Solve the 6x8 board in <span id="a15_tier">13 min 20 sec</span> or less. <span id="a15" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 6x8 board in <span id="a15_tier">13m 20s</span> or less. <span id="a15" class="incomplete">INCOMPLETE</span></li>
 			<li>Solve the 6x8 board in <span id="a16_tier">1,500</span> moves or less. <span id="a16" class="incomplete">INCOMPLETE</span></li>
 			<hr>
-			<li>Solve the 8x8 board in <span id="a17_tier">16 min 40 sec</span> or less. <span id="a17" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 8x8 board in <span id="a17_tier">16m 40s</span> or less. <span id="a17" class="incomplete">INCOMPLETE</span></li>
 			<li>Solve the 8x8 board in <span id="a18_tier">2,500</span> moves or less. <span id="a18" class="incomplete">INCOMPLETE</span></li>
 			<hr>
 			<li>Solve the 8x10 board in <span id="a19_tier">20 minutes</span> or less. <span id="a19" class="incomplete">INCOMPLETE</span></li>
@@ -82,13 +82,13 @@
 			<li>Solve the 10x12 board in <span id="a23_tier">30 minutes</span> or less. <span id="a23" class="incomplete">INCOMPLETE</span></li>
 			<li>Solve the 10x12 board in <span id="a24_tier">5,000</span> moves or less. <span id="a24" class="incomplete">INCOMPLETE</span></li>
 			<hr>
-			<li>Solve the 12x12 board in <span id="a25_tier">33 min 20 sec</span> or less. <span id="a25" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 12x12 board in <span id="a25_tier">37m 30s</span> or less. <span id="a25" class="incomplete">INCOMPLETE</span></li>
 			<li>Solve the 12x12 board in <span id="a26_tier">7,500</span> moves or less. <span id="a26" class="incomplete">INCOMPLETE</span></li>
 			<hr>
-			<li>Solve the 15x15 board in <span id="a27_tier">40 minutes</span> or less. <span id="a27" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 15x15 board in <span id="a27_tier">50 minutes</span> or less. <span id="a27" class="incomplete">INCOMPLETE</span></li>
 			<li>Solve the 15x15 board in <span id="a28_tier">9,000</span> moves or less. <span id="a28" class="incomplete">INCOMPLETE</span></li>
 			<hr>
-			<li>Solve the 20x20 board in <span id="a29_tier">1 hour</span> or less. <span id="a29" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 20x20 board in <span id="a29_tier">1h 20m</span> or less. <span id="a29" class="incomplete">INCOMPLETE</span></li>
 			<li>Solve the 20x20 board in <span id="a30_tier">12,500</span> moves or less. <span id="a30" class="incomplete">INCOMPLETE</span></li>
 		</ul>
 	</body>
@@ -141,7 +141,7 @@
 			localStorage.getItem("bestMoves20x20")
 		];
 		var achievements = 0;
-		var totalAchievements = 193;
+		var totalAchievements = 200;
 		if (t[0] <= 30000) {
 			achievements += 1;
 			document.getElementById("a1_tier").innerHTML = "20 seconds";
@@ -186,19 +186,19 @@
 		}
 		if (t[1] <= 60000) {
 			achievements += 1;
-			document.getElementById("a3_tier").innerHTML = “45 seconds";
+			document.getElementById("a3_tier").innerHTML = "45 seconds";
 			if (t[1] <= 45000) {
 				achievements += 1;
-				document.getElementById("a3_tier").innerHTML = “30 seconds";
+				document.getElementById("a3_tier").innerHTML = "30 seconds";
 				if (t[1] <= 30000) {
 					achievements += 1;
-					document.getElementById("a3_tier").innerHTML = “20 seconds";
+					document.getElementById("a3_tier").innerHTML = "20 seconds";
 					if (t[1] <= 20000) {
 						achievements += 1;
-						document.getElementById("a3_tier").innerHTML = “15 seconds";
+						document.getElementById("a3_tier").innerHTML = "15 seconds";
 						if (t[1] <= 15000) {
 							achievements += 1;
-							document.getElementById("a3_tier").innerHTML = “12 seconds";
+							document.getElementById("a3_tier").innerHTML = "12 seconds";
 							if (t[1] <= 12000) {
 								achievements += 1;
 								document.getElementById("a3").innerHTML = "COMPLETE!";
@@ -211,16 +211,16 @@
 		}
 		if (m[1] <= 125) {
 			achievements += 1;
-			document.getElementById("a4_tier").innerHTML = “100”;
+			document.getElementById("a4_tier").innerHTML = "100";
 			if (m[1] <= 100) {
 				achievements += 1;
-				document.getElementById("a4_tier").innerHTML = “80”;
+				document.getElementById("a4_tier").innerHTML = "80";
 				if (m[1] <= 80) {
 					achievements += 1;
-					document.getElementById("a4_tier").innerHTML = “70”;
+					document.getElementById("a4_tier").innerHTML = "70";
 					if (m[1] <= 70) {
 						achievements += 1;
-						document.getElementById("a4_tier").innerHTML = “60”;
+						document.getElementById("a4_tier").innerHTML = "60";
 						if (m[1] <= 60) {
 							achievements += 1;
 							document.getElementById("a4").innerHTML = "COMPLETE!";
@@ -229,6 +229,31 @@
 					}
 				}
 			}
+		}
+		if (t[2] <= 90000) {
+			achievements += 1;
+			document.getElementById("a5_tier").innerHTML = "1m 15s";
+		}
+		if (t[2] <= 75000) {
+			achievements += 1;
+			document.getElementById("a5_tier").innerHTML = "1 minute";
+		}
+		if (t[2] <= 60000) {
+			achievements += 1;
+			document.getElementById("a5_tier").innerHTML = "45 seconds";
+		}
+		if (t[2] <= 45000) {
+			achievements += 1;
+			document.getElementById("a5_tier").innerHTML = "30 seconds";
+		}
+		if (t[2] <= 30000) {
+			achievements += 1;
+			document.getElementById("a5_tier").innerHTML = "25 seconds";
+		}
+		if (t[2] <= 25000) {
+			achievements += 1;
+			document.getElementById("a5").innerHTML = "COMPLETE!";
+			document.getElementById("a5").classList = ["complete"];
 		}
 		document.getElementById("a0").innerHTML = (achievements / totalAchievements * 100).toFixed(2) + "%";
 		if (achievements > 0 && achievements < totalAchievements) {
