@@ -41,6 +41,7 @@
 		<a href="BlockPuzzle12.html">12x12</a><br>
 		<a href="BlockPuzzle15.html">15x15</a>
 		<a href="BlockPuzzle20.html">20x20</a>
+		<a style="position: absolute; bottom: 8px; left: 8px;" href="javascript:switchTheme()">Switch to <span id="theme">Dark</span> Mode</a>
 		<span style="position: absolute; top: 8px; right: 608px; width: 350px;">
 			Your Best<br>
 			Time: <b id="bestTime">999&apos;59&quot;<small>999</small></b><br>
@@ -458,5 +459,14 @@
 				}
 			}
 		});
+		function switchTheme() {
+			if (document.body.classList.contains("dark") == true) {
+				document.body.classList.remove("dark");
+				document.getElementById("theme").innerHTML = "Dark";
+			} else if (document.body.classList.contains("dark") == false) {
+				document.body.classList.add("dark");
+				document.getElementById("theme").innerHTML = "Light";
+			}
+		}
 	</script>
 </html>
