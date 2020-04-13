@@ -141,7 +141,7 @@
 			localStorage.getItem("bestMoves20x20")
 		];
 		var achievements = 0;
-		var totalAchievements = 200;
+		var totalAchievements = 201;
 		if (t[0] <= 30000) {
 			achievements += 1;
 			document.getElementById("a1_tier").innerHTML = "20 seconds";
@@ -251,6 +251,10 @@
 			document.getElementById("a5_tier").innerHTML = "25 seconds";
 		}
 		if (t[2] <= 25000) {
+			achievements += 1;
+			document.getElementById("a5_tier").innerHTML = "20 seconds";
+		}
+		if (t[2] <= 20000) {
 			achievements += 1;
 			document.getElementById("a5").innerHTML = "COMPLETE!";
 			document.getElementById("a5").classList = ["complete"];
