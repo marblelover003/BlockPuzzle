@@ -313,5 +313,14 @@
 				}
 			}
 		});
+		function switchTheme() {
+			if (document.body.classList.contains("dark") == true) {
+				document.body.classList.remove("dark");
+				document.getElementById("theme").innerHTML = "Dark";
+			} else if (document.body.classList.contains("dark") == false) {
+				document.body.classList.add("dark");
+				document.getElementById("theme").innerHTML = "Light";
+			}
+		}
 	</script>
 </html>
