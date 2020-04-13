@@ -14,7 +14,7 @@
 				color: white;
 				text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000, 4px 4px 0 #000, 5px 5px 0 #000, 6px 6px 0 #000, 7px 7px 0 #000, 8px 8px 0 #000, 9px 9px 0 #000, 10px 10px 0 #000, 11px 11px 0 #000, 12px 12px 0 #000;
 			}
-			td.dark {
+			.dark td {
 				color: black !important;
 				text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, 2px 2px 0 #fff, 3px 3px 0 #fff, 4px 4px 0 #fff, 5px 5px 0 #fff, 6px 6px 0 #fff, 7px 7px 0 #fff, 8px 8px 0 #fff, 9px 9px 0 #fff, 10px 10px 0 #fff, 11px 11px 0 #fff, 12px 12px 0 #fff !important;
 			}
@@ -22,6 +22,7 @@
 	</head>
 	<body>
 		<div id="banner"><span id="demo">FANTASTIC!</span></div>
+		<a style="position: absolute; bottom: 8px; left: 8px;" href="javascript:switchTheme()">Switch to <span id="theme">Dark</span> Mode</a>
 		Time elapsed: <b id="time">0&apos;00&quot;<small>000</small></b><br>
 		Moves: <b id="moves">0</b><br>
 		Speed: <b id="speed">0<span style="font-size: 18px;">.00</span></b> moves / sec<br>
