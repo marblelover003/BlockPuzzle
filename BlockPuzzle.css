@@ -134,9 +134,9 @@ button:hover {
 button:active { /* for Mac users */
   color: black;
 }
-.dark body {
-	background: black;
-	color: white;
+body.dark {
+	background: black !important;
+	color: white !important;
 }
 .dark td:hover {
 	color: #333 !important;
