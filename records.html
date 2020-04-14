@@ -17,6 +17,9 @@
 				text-align: center;
 				font-size: 50px;
 			}
+			table, th, td {
+				border: 1px solid black;
+			}
 			#resetBtn {
 				-webkit-appearance: none;
 				border: 1px solid red;
@@ -57,7 +60,8 @@
 			<a href="BlockPuzzle10x12.html">10x12</a>
 			<a href="BlockPuzzle12.html">12x12</a><br>
 			<a href="BlockPuzzle15.html">15x15</a>
-			<a href="BlockPuzzle20.html">20x20</a>
+			<a href="BlockPuzzle20.html">20x20</a><br>
+			<a href="BlockPuzzle25.html">25x25 Extreme</a>
 		</span>
 		<table>
 			<tr>
@@ -140,11 +144,16 @@
 				<td id="time20x20">999:59.999</td>
 				<td id="moves20x20">100,000</td>
 			</tr>
+			<tr>
+				<td>25x25</td>
+				<td id="time25x25">999:59.999</td>
+				<td id="moves25x25">100,000</td>
+			</tr>
 		</table>
 	</body>
 	<script>
 		function displayRecords() {
-			var sizes = ['3x3', '3x4', '4x4', '4x5', '5x5', '5x6', '6x6', '6x8', '8x8', '8x10', '10x10', '10x12', '12x12', '15x15', '20x20'];
+			var sizes = ['3x3', '3x4', '4x4', '4x5', '5x5', '5x6', '6x6', '6x8', '8x8', '8x10', '10x10', '10x12', '12x12', '15x15', '20x20', '25x25'];
 			for (var i = 0; i < sizes.length; i++) {
 				var time = (localStorage.getItem("bestTime" + sizes[i]) == null ? 59999999 : localStorage.getItem("bestTime" + sizes[i]));
 				var moves = (localStorage.getItem("bestMoves" + sizes[i]) == null ? 100000 : localStorage.getItem("bestMoves" + sizes[i]));
@@ -160,7 +169,7 @@
 			if (conf) {
 				conf = confirm("Are you POSITIVE you want to reset your records?! This action cannot be undone!");
 				if (conf) {
-					var sizes = ['3x3', '3x4', '4x4', '4x5', '5x5', '5x6', '6x6', '6x8', '8x8', '8x10', '10x10', '10x12', '12x12', '15x15', '20x20'];
+					var sizes = ['3x3', '3x4', '4x4', '4x5', '5x5', '5x6', '6x6', '6x8', '8x8', '8x10', '10x10', '10x12', '12x12', '15x15', '20x20', '25x25'];
 					for (var i = 0; i < sizes.length; i++) {
 						localStorage.setItem("bestTime" + sizes[i], 59999999);
 						localStorage.setItem("bestMoves" + sizes[i], 100000);
