@@ -1,8 +1,8 @@
-# BlockPuzzle v1.7.0
+# BlockPuzzle v1.8.0
 
 Welcome to Block Puzzle, a sliding number puzzle that will test your skill.
 
-There are 15 different board sizes:
+There are 16 different board sizes:
 
 - 3x3 ![3x3](https://marblelover003.github.io/BlockPuzzle/3x3.png)
 - 3x4 ![3x4](https://marblelover003.github.io/BlockPuzzle/3x4.png)
@@ -19,6 +19,7 @@ There are 15 different board sizes:
 - 12x12 ![12x12](https://marblelover003.github.io/BlockPuzzle/12x12.png)
 - 15x15 ![15x15](https://marblelover003.github.io/BlockPuzzle/15x15.png)
 - 20x20 ![20x20](https://marblelover003.github.io/BlockPuzzle/20x20.png)
+- 25x25 Extreme ![25x25](https://marblelover003.github.io/BlockPuzzle/25x25.png)
 
 On each one, you will have one "hole" that you can use for moving the numbers around. See the image below if you're wondering what I mean by this.
 
@@ -29,5 +30,7 @@ There are also color codes for which numbers are in the correct spot. A number i
 Simply hit "New Game" on a board to get started! But be aware that the boards are randomly generated and thus some boards may be unsolvable - if you come across this problem where only two numbers are not in their correct positions, you'll get a prompt that asks if you wish to start a new game.
 
 This game is keyboard compatible too! Press <kbd>N</kbd> on your keyboard to start a new game, and use the arrow keys or the WASD keys to move the tiles! This feature was added in v1.4.0.
+
+You can also try out Dark Mode on any board! Simply click "Switch to Dark Mode" to try it out! This feature was added in v1.7.0.
 
 But enough talk - click [here](https://marblelover003.github.io/BlockPuzzle) to get started!
