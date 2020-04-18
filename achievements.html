@@ -91,8 +91,8 @@
 			<li>Solve the 20x20 board in <span id="a29_tier">1h 20m</span> or less. <span id="a29" class="incomplete">INCOMPLETE</span></li>
 			<li>Solve the 20x20 board in <span id="a30_tier">12,500</span> moves or less. <span id="a30" class="incomplete">INCOMPLETE</span></li>
 			<hr>
-			<li>Solve the 25x25 board in <span id="a29_tier">2 hours</span> or less. <span id="a31" class="incomplete">INCOMPLETE</span></li>
-			<li>Solve the 25x25 board in <span id="a30_tier">15,000</span> moves or less. <span id="a32" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 25x25 board in <span id="a31_tier">2 hours</span> or less. <span id="a31" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 25x25 board in <span id="a32_tier">20,000</span> moves or less. <span id="a32" class="incomplete">INCOMPLETE</span></li>
 		</ul>
 	</body>
 	<script>
@@ -146,19 +146,26 @@
 			localStorage.getItem("bestMoves25x25")
 		];
 		var achievements = 0;
-		var totalAchievements = 201;
 		if (t[0] <= 30000) {
 			achievements += 1;
 			document.getElementById("a1_tier").innerHTML = "20 seconds";
+			document.getElementById("a1").innerHTML = "20%";
+			document.getElementById("a1").classList = ["partial"];
 			if (t[0] <= 20000) {
 				achievements += 1;
 				document.getElementById("a1_tier").innerHTML = "15 seconds";
+				document.getElementById("a1").innerHTML = "40%";
+				document.getElementById("a1").classList = ["partial"];
 				if (t[0] <= 15000) {
 					achievements += 1;
 					document.getElementById("a1_tier").innerHTML = "10 seconds";
+					document.getElementById("a1").innerHTML = "60%";
+					document.getElementById("a1").classList = ["partial"];
 					if (t[0] <= 10000) {
 						achievements += 1;
 						document.getElementById("a1_tier").innerHTML = "8 seconds";
+						document.getElementById("a1").innerHTML = "80%";
+						document.getElementById("a1").classList = ["partial"];
 						if (t[0] <= 8000) {
 							achievements += 1;
 							document.getElementById("a1").innerHTML = "COMPLETE!";
@@ -171,15 +178,23 @@
 		if (m[0] <= 75) {
 			achievements += 1;
 			document.getElementById("a2_tier").innerHTML = "50";
+			document.getElementById("a2").innerHTML = "20%";
+			document.getElementById("a2").classList = ["partial"];
 			if (m[0] <= 50) {
 				achievements += 1;
 				document.getElementById("a2_tier").innerHTML = "40";
+				document.getElementById("a2").innerHTML = "40%";
+				document.getElementById("a2").classList = ["partial"];
 				if (m[0] <= 40) {
 					achievements += 1;
 					document.getElementById("a2_tier").innerHTML = "30";
+					document.getElementById("a2").innerHTML = "60%";
+					document.getElementById("a2").classList = ["partial"];
 					if (m[0] <= 30) {
 						achievements += 1;
 						document.getElementById("a2_tier").innerHTML = "20";
+						document.getElementById("a2").innerHTML = "80%";
+						document.getElementById("a2").classList = ["partial"];
 						if (m[0] <= 20) {
 							achievements += 1;
 							document.getElementById("a2").innerHTML = "COMPLETE!";
@@ -192,18 +207,28 @@
 		if (t[1] <= 60000) {
 			achievements += 1;
 			document.getElementById("a3_tier").innerHTML = "45 seconds";
+			document.getElementById("a3").innerHTML = "16.67%";
+			document.getElementById("a3").classList = ["partial"];
 			if (t[1] <= 45000) {
 				achievements += 1;
 				document.getElementById("a3_tier").innerHTML = "30 seconds";
+				document.getElementById("a3").innerHTML = "33.33%";
+				document.getElementById("a3").classList = ["partial"];
 				if (t[1] <= 30000) {
 					achievements += 1;
 					document.getElementById("a3_tier").innerHTML = "20 seconds";
+					document.getElementById("a3").innerHTML = "50%";
+					document.getElementById("a3").classList = ["partial"];
 					if (t[1] <= 20000) {
 						achievements += 1;
 						document.getElementById("a3_tier").innerHTML = "15 seconds";
+						document.getElementById("a3").innerHTML = "66.67%";
+						document.getElementById("a3").classList = ["partial"];
 						if (t[1] <= 15000) {
 							achievements += 1;
 							document.getElementById("a3_tier").innerHTML = "12 seconds";
+							document.getElementById("a3").innerHTML = "83.33%";
+							document.getElementById("a3").classList = ["partial"];
 							if (t[1] <= 12000) {
 								achievements += 1;
 								document.getElementById("a3").innerHTML = "COMPLETE!";
@@ -217,19 +242,33 @@
 		if (m[1] <= 125) {
 			achievements += 1;
 			document.getElementById("a4_tier").innerHTML = "100";
+			document.getElementById("a4").innerHTML = "16.67%";
+			document.getElementById("a4").classList = ["partial"];
 			if (m[1] <= 100) {
 				achievements += 1;
 				document.getElementById("a4_tier").innerHTML = "80";
+				document.getElementById("a4").innerHTML = "33.33%";
+				document.getElementById("a4").classList = ["partial"];
 				if (m[1] <= 80) {
 					achievements += 1;
-					document.getElementById("a4_tier").innerHTML = "70";
-					if (m[1] <= 70) {
+					document.getElementById("a4_tier").innerHTML = "60";
+					document.getElementById("a4").innerHTML = "50%";
+					document.getElementById("a4").classList = ["partial"];
+					if (m[1] <= 60) {
 						achievements += 1;
-						document.getElementById("a4_tier").innerHTML = "60";
-						if (m[1] <= 60) {
+						document.getElementById("a4_tier").innerHTML = "50";
+						document.getElementById("a4").innerHTML = "66.67%";
+						document.getElementById("a4").classList = ["partial"];
+						if (m[1] <= 50) {
 							achievements += 1;
-							document.getElementById("a4").innerHTML = "COMPLETE!";
-							document.getElementById("a4").classList = ["complete"];
+							document.getElementById("a4_tier").innerHTML = "40";
+							document.getElementById("a4").innerHTML = "83.33%";
+							document.getElementById("a4").classList = ["partial"];
+							if (m[1] <= 40) {
+								achievements += 1;
+								document.getElementById("a4").innerHTML = "COMPLETE!";
+								document.getElementById("a4").classList = ["complete"];
+							}
 						}
 					}
 				}
@@ -238,32 +277,74 @@
 		if (t[2] <= 90000) {
 			achievements += 1;
 			document.getElementById("a5_tier").innerHTML = "1m 15s";
+			document.getElementById("a5").innerHTML = "14.29%";
+			document.getElementById("a5").classList = ["partial"];
 		}
 		if (t[2] <= 75000) {
 			achievements += 1;
 			document.getElementById("a5_tier").innerHTML = "1 minute";
+			document.getElementById("a5").innerHTML = "28.57%";
+			document.getElementById("a5").classList = ["partial"];
 		}
 		if (t[2] <= 60000) {
 			achievements += 1;
 			document.getElementById("a5_tier").innerHTML = "45 seconds";
+			document.getElementById("a5").innerHTML = "42.86%";
+			document.getElementById("a5").classList = ["partial"];
 		}
 		if (t[2] <= 45000) {
 			achievements += 1;
 			document.getElementById("a5_tier").innerHTML = "30 seconds";
+			document.getElementById("a5").innerHTML = "57.14%";
+			document.getElementById("a5").classList = ["partial"];
 		}
 		if (t[2] <= 30000) {
 			achievements += 1;
 			document.getElementById("a5_tier").innerHTML = "25 seconds";
+			document.getElementById("a5").innerHTML = "71.43%";
+			document.getElementById("a5").classList = ["partial"];
 		}
 		if (t[2] <= 25000) {
 			achievements += 1;
 			document.getElementById("a5_tier").innerHTML = "20 seconds";
+			document.getElementById("a5").innerHTML = "85.71%";
+			document.getElementById("a5").classList = ["partial"];
 		}
 		if (t[2] <= 20000) {
 			achievements += 1;
 			document.getElementById("a5").innerHTML = "COMPLETE!";
 			document.getElementById("a5").classList = ["complete"];
 		}
+		if (m[2] <= 200) {
+			achievements += 1;
+			document.getElementById("a6_tier").innerHTML = "175";
+			document.getElementById("a6").innerHTML = "20%";
+			document.getElementById("a6").classList = ["partial"];
+		}
+		if (m[2] <= 175) {
+			achievements += 1;
+			document.getElementById("a6_tier").innerHTML = "150";
+			document.getElementById("a6").innerHTML = "40%";
+			document.getElementById("a6").classList = ["partial"];
+		}
+		if (m[2] <= 150) {
+			achievements += 1;
+			document.getElementById("a6_tier").innerHTML = "125";
+			document.getElementById("a6").innerHTML = "60%";
+			document.getElementById("a6").classList = ["partial"];
+		}
+		if (m[2] <= 125) {
+			achievements += 1;
+			document.getElementById("a6_tier").innerHTML = "100";
+			document.getElementById("a6").innerHTML = "80%";
+			document.getElementById("a6").classList = ["partial"];
+		}
+		if (m[2] <= 100) {
+			achievements += 1;
+			document.getElementById("a6").innerHTML = "COMPLETE!";
+			document.getElementById("a6").classList = ["complete"];
+		}
+		var totalAchievements = 223;
 		document.getElementById("a0").innerHTML = (achievements / totalAchievements * 100).toFixed(2) + "%";
 		if (achievements > 0 && achievements < totalAchievements) {
 			document.getElementById("a0").classList = ["partial"];
