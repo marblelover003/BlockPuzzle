@@ -20,6 +20,7 @@ There are 16 different board sizes:
 - 15x15 ![15x15](https://marblelover003.github.io/BlockPuzzle/15x15.png)
 - 20x20 ![20x20](https://marblelover003.github.io/BlockPuzzle/20x20.png)
 - 25x25 Extreme ![25x25](https://marblelover003.github.io/BlockPuzzle/25x25.png)
+- 30x30 Impossible ![30x30](30x30.png) (coming soon!)
 
 On each one, you will have one "hole" that you can use for moving the numbers around. See the image below if you're wondering what I mean by this.
 
