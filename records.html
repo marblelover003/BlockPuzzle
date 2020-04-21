@@ -149,11 +149,16 @@
 				<td id="time25x25">999:59.999</td>
 				<td id="moves25x25">100,000</td>
 			</tr>
+			<tr>
+				<td>30x30</td>
+				<td id="time30x30">999:59.999</td>
+				<td id="moves30x30">100,000</td>
+			</tr>
 		</table>
 	</body>
 	<script>
 		function displayRecords() {
-			var sizes = ['3x3', '3x4', '4x4', '4x5', '5x5', '5x6', '6x6', '6x8', '8x8', '8x10', '10x10', '10x12', '12x12', '15x15', '20x20', '25x25'];
+			var sizes = ['3x3', '3x4', '4x4', '4x5', '5x5', '5x6', '6x6', '6x8', '8x8', '8x10', '10x10', '10x12', '12x12', '15x15', '20x20', '25x25', '30x30'];
 			for (var i = 0; i < sizes.length; i++) {
 				var time = (localStorage.getItem("bestTime" + sizes[i]) == null ? 59999999 : localStorage.getItem("bestTime" + sizes[i]));
 				var moves = (localStorage.getItem("bestMoves" + sizes[i]) == null ? 100000 : localStorage.getItem("bestMoves" + sizes[i]));
@@ -169,7 +174,7 @@
 			if (conf) {
 				conf = confirm("Are you POSITIVE you want to reset your records?! This action cannot be undone!");
 				if (conf) {
-					var sizes = ['3x3', '3x4', '4x4', '4x5', '5x5', '5x6', '6x6', '6x8', '8x8', '8x10', '10x10', '10x12', '12x12', '15x15', '20x20', '25x25'];
+					var sizes = ['3x3', '3x4', '4x4', '4x5', '5x5', '5x6', '6x6', '6x8', '8x8', '8x10', '10x10', '10x12', '12x12', '15x15', '20x20', '25x25', '30x30'];
 					for (var i = 0; i < sizes.length; i++) {
 						localStorage.setItem("bestTime" + sizes[i], 59999999);
 						localStorage.setItem("bestMoves" + sizes[i], 100000);
