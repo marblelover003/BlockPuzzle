@@ -2,6 +2,12 @@
 
 Welcome to Block Puzzle, a sliding number puzzle that will test your skill.
 
+___
+## WHAT'S NEW?
+
+New IMPOSSIBLE Board! 30x30 is now officially available. Only attempt if you have three or four hours of free time!
+___
+
 There are 16 different board sizes:
 
 - 3x3 ![3x3](3x3.png)
