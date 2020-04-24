@@ -30,7 +30,7 @@ There are 16 different board sizes:
 
 On each one, you will have one "hole" that you can use for moving the numbers around. See the image below if you're wondering what I mean by this.
 
-<img src="3x3Board.png" alt="3x3" width="600"/>
+<img src="3x3Board.png" alt="3x3" width="600" title="The 3x3 board with the hole marked"/>
 
 There are also color codes for which numbers are in the correct spot. A number is green when it is "solved".
 
