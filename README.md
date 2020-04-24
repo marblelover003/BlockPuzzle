@@ -10,27 +10,27 @@ ___
 
 There are 16 different board sizes:
 
-- 3x3 ![3x3](3x3.png)
-- 3x4 ![3x4](3x4.png)
-- 4x4 ![4x4](4x4.png)
-- 4x5 ![4x5](4x5.png)
-- 5x5 ![5x5](5x5.png)
-- 5x6 ![5x6](5x6.png)
-- 6x6 ![6x6](6x6.png)
-- 6x8 ![6x8](6x8.png)
-- 8x8 ![8x8](8x8.png)
-- 8x10 ![8x10](8x10.png)
-- 10x10 ![10x10](10x10.png)
-- 10x12 ![10x12](10x12.png)
-- 12x12 ![12x12](12x12.png)
-- 15x15 ![15x15](15x15.png)
-- 20x20 ![20x20](20x20.png)
-- 25x25 Extreme ![25x25](25x25.png)
-- 30x30 Impossible ![30x30](30x30.png)
+- 3x3 <img src="3x3.png" width="32"/>
+- 3x4 <img src="3x4.png" width="32"/>
+- 4x4 <img src="4x4.png" width="32"/>
+- 4x5 <img src="4x5.png" width="32"/>
+- 5x5 <img src="5x5.png" width="32"/>
+- 5x6 <img src="5x6.png" width="32"/>
+- 6x6 <img src="6x6.png" width="32"/>
+- 6x8 <img src="6x8.png" width="32"/>
+- 8x8 <img src="8x8.png" width="32"/>
+- 8x10 <img src="8x10.png" width="32"/>
+- 10x10 <img src="10x10.png" width="32"/>
+- 10x12 <img src="10x12.png" width="32"/>
+- 12x12 <img src="12x12.png" width="32"/>
+- 15x15 <img src="15x15.png" width="32"/>
+- 20x20 <img src="20x20.png" width="32"/>
+- 25x25 Extreme <img src="25x25.png" width="32"/>
+- 30x30 Impossible <img src="30x30.png" width="32"/>
 
 On each one, you will have one "hole" that you can use for moving the numbers around. See the image below if you're wondering what I mean by this.
 
-![3x3Board](https://marblelover003.github.io/BlockPuzzle/3x3Board.png "The 3x3 board")
+<img src="3x3Board.png" alt="3x3" width="600"/>
 
 There are also color codes for which numbers are in the correct spot. A number is green when it is "solved".
 
