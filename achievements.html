@@ -93,6 +93,27 @@
 			<hr>
 			<li>Solve the 25x25 board in <span id="a31_tier">2 hours</span> or less. <span id="a31" class="incomplete">INCOMPLETE</span></li>
 			<li>Solve the 25x25 board in <span id="a32_tier">20,000</span> moves or less. <span id="a32" class="incomplete">INCOMPLETE</span></li>
+			<hr>
+			<li>Solve the 30x30 board in <span id="a33_tier">3 hours</span> or less. <span id="a33" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 30x30 board in <span id="a34_tier">30,000</span> moves or less. <span id="a34" class="incomplete">INCOMPLETE</span></li>
+			<hr>
+			<li>Solve the 3x3 board <span id="a35_tier">1</span> time(s). <span id="a35" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 3x4 board <span id="a36_tier">1</span> time(s). <span id="a36" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 4x4 board <span id="a37_tier">1</span> time(s). <span id="a37" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 4x5 board <span id="a38_tier">1</span> time(s). <span id="a38" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 5x5 board <span id="a39_tier">1</span> time(s). <span id="a39" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 5x6 board <span id="a40_tier">1</span> time(s). <span id="a40" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 6x6 board <span id="a41_tier">1</span> time(s). <span id="a41" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 6x8 board <span id="a42_tier">1</span> time(s). <span id="a42" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 8x8 board <span id="a43_tier">1</span> time(s). <span id="a43" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 8x10 board <span id="a44_tier">1</span> time(s). <span id="a44" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 10x10 board <span id="a45_tier">1</span> time(s). <span id="a45" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 10x12 board <span id="a46_tier">1</span> time(s). <span id="a46" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 12x12 board <span id="a47_tier">1</span> time(s). <span id="a47" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 15x15 board <span id="a48_tier">1</span> time(s). <span id="a48" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 20x20 board <span id="a49_tier">1</span> time(s). <span id="a49" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 25x25 board <span id="a50_tier">1</span> time(s). <span id="a50" class="incomplete">INCOMPLETE</span></li>
+			<li>Solve the 30x30 board <span id="a51_tier">1</span> time(s). <span id="a51" class="incomplete">INCOMPLETE</span></li>
 		</ul>
 	</body>
 	<script>
@@ -125,7 +146,8 @@
 			localStorage.getItem("bestTime12x12"),
 			localStorage.getItem("bestTime15x15"),
 			localStorage.getItem("bestTime20x20"),
-			localStorage.getItem("bestTime25x25")
+			localStorage.getItem("bestTime25x25"),
+			localStorage.getItem("bestTime30x30")
 		];
 		var m = [
 			localStorage.getItem("bestMoves3x3"),
@@ -143,7 +165,27 @@
 			localStorage.getItem("bestMoves12x12"),
 			localStorage.getItem("bestMoves15x15"),
 			localStorage.getItem("bestMoves20x20"),
-			localStorage.getItem("bestMoves25x25")
+			localStorage.getItem("bestMoves25x25"),
+			localStorage.getItem("bestMoves30x30")
+		];
+		var s = [
+			localStorage.getItem("solves3x3"),
+			localStorage.getItem("solves3x4"),
+			localStorage.getItem("solves4x4"),
+			localStorage.getItem("solves4x5"),
+			localStorage.getItem("solves5x5"),
+			localStorage.getItem("solves5x6"),
+			localStorage.getItem("solves6x6"),
+			localStorage.getItem("solves6x8"),
+			localStorage.getItem("solves8x8"),
+			localStorage.getItem("solves8x10"),
+			localStorage.getItem("solves10x10"),
+			localStorage.getItem("solves10x12"),
+			localStorage.getItem("solves12x12"),
+			localStorage.getItem("solves15x15"),
+			localStorage.getItem("solves20x20"),
+			localStorage.getItem("solves25x25"),
+			localStorage.getItem("solves30x30")
 		];
 		var achievements = 0;
 		if (t[0] <= 30000) {
@@ -344,7 +386,7 @@
 			document.getElementById("a6").innerHTML = "COMPLETE!";
 			document.getElementById("a6").classList = ["complete"];
 		}
-		var totalAchievements = 223;
+		var totalAchievements = 444;
 		document.getElementById("a0").innerHTML = (achievements / totalAchievements * 100).toFixed(2) + "%";
 		if (achievements > 0 && achievements < totalAchievements) {
 			document.getElementById("a0").classList = ["partial"];
