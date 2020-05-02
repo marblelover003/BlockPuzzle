@@ -9,6 +9,8 @@ ___
 ## COMING SOON...
 
 I am currently working on an Achievements page. Once it's fully up and running, you'll be able to track your accomplishments!
+
+***ALSO COMING SOON:*** On the Records page, you will soon be able to track how many times you've solved each board!
 ___
 
 There are 17 different board sizes:
