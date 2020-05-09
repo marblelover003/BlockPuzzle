@@ -711,6 +711,9 @@
 		if (localStorage.getItem("bestMoves" + size[0] + "x" + size[1]) == null) {
 			localStorage.setItem("bestMoves" + size[0] + "x" + size[1], 100000);
 		}
+		if (localStorage.getItem("numSolves" + size[0] + "x" + size[1]) == null) {
+			localStorage.setItem("numSolves" + size[0] + "x" + size[1], 0);
+		}
 		displayBest();
 		function displayBest() {
 			var best = localStorage.getItem("bestTime" + size[0] + "x" + size[1]), best_M = Math.floor(best / 60000), best_S = Math.floor(best % 60000 / 1000), best_MS = Math.floor(best % 1000);
@@ -980,6 +983,8 @@
 						document.getElementById("demo").classList.remove("finish");
 						document.getElementById("banner").style.display = "none";
 					}, 1500);
+					var solves = localStorage.getItem("numSolves" + size[0] + "x" + size[1]) + 1;
+					localStorage.setItem("numSolves" + size[0] + "x" + size[1], solves);
 				}
 			}
 		}
