@@ -1,16 +1,14 @@
-# BlockPuzzle v1.8.1
+# BlockPuzzle v1.9.0
 
 Welcome to Block Puzzle, a sliding number puzzle that will test your skill.
 ___
 ## WHAT'S NEW?
 
-New IMPOSSIBLE Board! 30x30 is now officially available. Only attempt if you have three or four hours of free time!
+New Statistic: SOLVE COUNT! Every board you solve will now be tracked and sent to the Records page!
 ___
 ## COMING SOON...
 
-I am currently working on an Achievements page. Once it's fully up and running, you'll be able to track your accomplishments!
-
-***ALSO COMING SOON:*** On the Records page, you will soon be able to track how many times you've solved each board!
+I am still working on an Achievements page. Once it's fully up and running, you'll be able to track your accomplishments!
 ___
 
 There are 17 different board sizes:
