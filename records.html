@@ -69,91 +69,109 @@
 				<th>Board Size</th>
 				<th>Fastest Time</th>
 				<th>Least Moves</th>
+				<th>Solve Count</th>
 			</tr>
 			<tr>
 				<td>3x3</td>
 				<td id="time3x3">999:59.999</td>
 				<td id="moves3x3">100,000</td>
+				<td id="solves3x3">0</td>
 			</tr>
 			<tr>
 				<td>3x4</td>
 				<td id="time3x4">999:59.999</td>
 				<td id="moves3x4">100,000</td>
+				<td id="solves3x4">0</td>
 			</tr>
 			<tr>
 				<td>4x4</td>
 				<td id="time4x4">999:59.999</td>
 				<td id="moves4x4">100,000</td>
+				<td id="solves4x4">0</td>
 			</tr>
 			<tr>
 				<td>4x5</td>
 				<td id="time4x5">999:59.999</td>
 				<td id="moves4x5">100,000</td>
+				<td id="solves4x5">0</td>
 			</tr>
 			<tr>
 				<td>5x5</td>
 				<td id="time5x5">999:59.999</td>
 				<td id="moves5x5">100,000</td>
+				<td id="solves5x5">0</td>
 			</tr>
 			<tr>
 				<td>5x6</td>
 				<td id="time5x6">999:59.999</td>
 				<td id="moves5x6">100,000</td>
+				<td id="solves5x6">0</td>
 			</tr>
 			<tr>
 				<td>6x6</td>
 				<td id="time6x6">999:59.999</td>
 				<td id="moves6x6">100,000</td>
+				<td id="solves6x6">0</td>
 			</tr>
 			<tr>
 				<td>6x8</td>
 				<td id="time6x8">999:59.999</td>
 				<td id="moves6x8">100,000</td>
+				<td id="solves6x8">0</td>
 			</tr>
 			<tr>
 				<td>8x8</td>
 				<td id="time8x8">999:59.999</td>
 				<td id="moves8x8">100,000</td>
+				<td id="solves8x8">0</td>
 			</tr>
 			<tr>
 				<td>8x10</td>
 				<td id="time8x10">999:59.999</td>
 				<td id="moves8x10">100,000</td>
+				<td id="solves8x10">0</td>
 			</tr>
 			<tr>
 				<td>10x10</td>
 				<td id="time10x10">999:59.999</td>
 				<td id="moves10x10">100,000</td>
+				<td id="solves10x10">0</td>
 			</tr>
 			<tr>
 				<td>10x12</td>
 				<td id="time10x12">999:59.999</td>
 				<td id="moves10x12">100,000</td>
+				<td id="solves10x12">0</td>
 			</tr>
 			<tr>
 				<td>12x12</td>
 				<td id="time12x12">999:59.999</td>
 				<td id="moves12x12">100,000</td>
+				<td id="solves12x12">0</td>
 			</tr>
 			<tr>
 				<td>15x15</td>
 				<td id="time15x15">999:59.999</td>
 				<td id="moves15x15">100,000</td>
+				<td id="solves15x15">0</td>
 			</tr>
 			<tr>
 				<td>20x20</td>
 				<td id="time20x20">999:59.999</td>
 				<td id="moves20x20">100,000</td>
+				<td id="solves20x20">0</td>
 			</tr>
 			<tr>
 				<td>25x25</td>
 				<td id="time25x25">999:59.999</td>
 				<td id="moves25x25">100,000</td>
+				<td id="solves25x25">0</td>
 			</tr>
 			<tr>
 				<td>30x30</td>
 				<td id="time30x30">999:59.999</td>
 				<td id="moves30x30">100,000</td>
+				<td id="solves30x30">0</td>
 			</tr>
 		</table>
 	</body>
@@ -163,11 +181,13 @@
 			for (var i = 0; i < sizes.length; i++) {
 				var time = (localStorage.getItem("bestTime" + sizes[i]) == null ? 59999999 : localStorage.getItem("bestTime" + sizes[i]));
 				var moves = (localStorage.getItem("bestMoves" + sizes[i]) == null ? 100000 : localStorage.getItem("bestMoves" + sizes[i]));
+				var solves = (localStorage.getItem("numSolves" + sizes[i]) == null ? 0 : localStorage.getItem("numSolves" + sizes[i]));
 				var m = Math.floor(time / 60000);
 				var s = Math.floor(time % 60000 / 1000);
 				var ms = Math.floor(time % 1000);
 				document.getElementById("time" + sizes[i]).innerHTML = m + ":" + ("0" + s).slice(-2) + "." + ("00" + ms).slice(-3);
 				document.getElementById("moves" + sizes[i]).innerHTML = (moves >= 1000 ? (Math.floor(moves / 1000) + "," + ("00" + (moves % 1000)).slice(-3)) : moves);
+				document.getElementById("solves" + sizes[i]).innerHTML = (solves >= 1000 ? (Math.floor(solves / 1000) + "," + ("00" + (solves % 1000)).slice(-3)) : solves);
 			}
 		}
 		function resetRecords() {
@@ -179,6 +199,7 @@
 					for (var i = 0; i < sizes.length; i++) {
 						localStorage.setItem("bestTime" + sizes[i], 59999999);
 						localStorage.setItem("bestMoves" + sizes[i], 100000);
+						localStorage.setItem("numSolves" + sizes[i], 0);
 					}
 					displayRecords();
 				}
