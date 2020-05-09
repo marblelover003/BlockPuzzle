@@ -370,7 +370,7 @@
 						document.getElementById("demo").classList.remove("finish");
 						document.getElementById("banner").style.display = "none";
 					}, 1500);
-					var solves = localStorage.getItem("numSolves" + size[0] + "x" + size[1]) + 1;
+					var solves = parseInt(localStorage.getItem("numSolves" + size[0] + "x" + size[1])) + 1;
 					localStorage.setItem("numSolves" + size[0] + "x" + size[1], solves);
 				}
 			}
