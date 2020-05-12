@@ -21,20 +21,6 @@
 			.complete {
 				color: #00bf00;
 			}
-			progress {
-				-webkit-appearance: none;
-				width: 500px;
-				height: 24px;
-			}
-			progress::-webkit-progress-bar {
-				border-radius: 12px;
-				background: white;
-				box-shadow: 0 0 3px 1px #0005 inset;
-			}
-			progress::-webkit-progress-value {
-				background: #00bf00;
-				border-radius: 12px;
-			}
 		</style>
 		<link rel="stylesheet" href="BlockPuzzle.css">
 		<link rel="icon" href="achievements.png">
@@ -42,7 +28,7 @@
 	</head>
 	<body>
 		<h1>Achievements</h1>
-		<p id="quote"></p>
+        <p id="quote">...</p>
 		<ul>
 			<li>Complete all achievements. <span id="a0" class="incomplete">0%</span></li>
 			<hr>
@@ -130,6 +116,18 @@
 			"Shoot for the moon. If you miss, you will still be among the stars."
 		];
 		document.getElementById("quote").innerHTML = quotes[Math.floor(Math.random() * quotes.length)];
+        var sizes = ["3x3", "3x4", "4x4", "4x5", "5x5", "5x6", "6x6", "6x8", "8x8", "8x10", "10x10", "10x12", "12x12", "15x15", "20x20", "25x25", "30x30"];
+        for (var i = 0; i < t.length; i++) {
+            if (localStorage.getItem("bestTime" + sizes[i]) == null) {
+                localStorage.setItem("bestTime" + sizes[i], 59999999);
+            }
+            if (localStorage.getItem("bestMoves" + sizes[i]) == null) {
+                localStorage.setItem("bestMoves" + sizes[i], 100000);
+            }
+            if (localStorage.getItem("numSolves" + sizes[i]) == null) {
+                localStorage.setItem("numSolves" + sizes[i], 0);
+            }
+        }
 		var t = [
 			localStorage.getItem("bestTime3x3"),
 			localStorage.getItem("bestTime3x4"),
