@@ -117,7 +117,7 @@
 		];
 		document.getElementById("quote").innerHTML = quotes[Math.floor(Math.random() * quotes.length)];
         var sizes = ["3x3", "3x4", "4x4", "4x5", "5x5", "5x6", "6x6", "6x8", "8x8", "8x10", "10x10", "10x12", "12x12", "15x15", "20x20", "25x25", "30x30"];
-        for (var i = 0; i < t.length; i++) {
+        for (var i = 0; i < sizes.length; i++) {
             if (localStorage.getItem("bestTime" + sizes[i]) == null) {
                 localStorage.setItem("bestTime" + sizes[i], 59999999);
             }
