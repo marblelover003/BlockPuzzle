@@ -6,7 +6,7 @@ ___
 
 New Statistic: SOLVE COUNT! Every board you solve will now be tracked and sent to the Records page!
 ___
-## COMING SOON...
+## COMING SOON!
 
 I am still working on an Achievements page. Once it's fully up and running, you'll be able to track your accomplishments!
 ___
