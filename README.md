@@ -1,4 +1,4 @@
-# BlockPuzzle v1.9.1
+# BlockPuzzle v1.10.0
 
 Welcome to Block Puzzle, a sliding number puzzle that will test your skill.
 ___
@@ -29,7 +29,7 @@ There are 17 different board sizes:
 - 15x15 <img src="15x15.png" width="32"/>
 - 20x20 <img src="20x20.png" width="32"/>
 - 25x25 Extreme <img src="25x25.png" width="32"/>
-- 30x30 Impossible <img src="30x30.png" width="32"/>
+- 30x30 Insane <img src="30x30.png" width="32"/>
 
 On each one, you will have one "hole" that you can use for moving the numbers around. See the image below if you're wondering what I mean by this.
 
